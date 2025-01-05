@@ -1,0 +1,146 @@
+{% extends 'partitions/base.html' %}
+
+{% block content %}
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(120deg, #1e1e1e, #2a2a2a);
+        color: #fff;
+        overflow-x: hidden;
+    }
+
+    .card {
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .btn-custom {
+        background: linear-gradient(90deg, #ff5722, #ff9800);
+        color: #fff;
+        border: none;
+        border-radius: 50px;
+        padding: 0.5rem 1.5rem;
+        transition: background 0.3s ease;
+    }
+
+    .btn-custom:hover {
+        background: linear-gradient(90deg, #ff9800, #ff5722);
+    }
+
+    .hero {
+        padding: 4rem 2rem;
+        background: linear-gradient(120deg, #2a2a2a, #1e1e1e);
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero p {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+    }
+
+    @keyframes fade {
+        from {
+            opacity: 0;
+            transform :translateY(-20px)
+        }
+        to{
+            opacity: 1;
+            transform: translateY(0)
+        }
+        
+    }
+
+    .animate{
+        animation : fade 1.5s  ease-in-out;
+    }
+</style>
+<div class = 'animate'>
+    <div class="hero text-center mt-5">
+        <h1>به فروشگاه ما خوش آمدید</h1>
+        <p>مقصد نهایی شما برای خرید مکمل‌های باکیفیت!</p>
+        <a href="#products" class="btn btn-custom">هم‌اکنون خرید کنید</a>
+    </div>
+
+    <!-- بخش محصولات -->
+    <section id="products" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">محصولات ما</h2>
+
+            <!-- ردیف 1: پروتئین وی -->
+            <div class="row mb-5">
+                <h3 class="mb-3 text-end">پروتئین وی</h3>
+                <div class="position-relative">
+                    <div id="whey-carousel" class="row g-4 d-flex flex-nowrap overflow-hidden">
+                        {% for product in whey_protein %}
+                        <div class="col-6 col-md-4 flex-shrink-0">
+                            <div class="card p-4">
+                                <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+                                <div class="card-body text-end">
+                                    <h5 class="card-title">{{ product.name }}</h5>
+                                    <p class="card-text">{{ product.description }}</p>
+                                    <p class="card-text text-success">{{ product.price }} تومان</p>
+                                    <a href="{{ product.get_absolute_url }}" class="btn btn-custom">خرید</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <button class="btn btn-light position-absolute top-50 start-0 translate-middle-y" onclick="scrollCarousel('whey-carousel', -1)">&laquo;</button>
+                    <button class="btn btn-light position-absolute top-50 end-0 translate-middle-y" onclick="scrollCarousel('whey-carousel', 1)">&raquo;</button>
+                </div>
+                <a href="/category/whey-protein/" class="btn btn-secondary mt-3">مشاهده‌ی تمامی محصولات پروتئین وی</a>
+            </div>
+
+            <!-- ردیف 2: گینرها -->
+            <div class="row mb-5">
+                <h3 class="mb-3 text-end">گینرها</h3>
+                <div class="position-relative">
+                    <div id="mass-carousel" class="row g-4 d-flex flex-nowrap overflow-hidden">
+                        {% for product in mass_gainers %}
+                        <div class="col-6 col-md-4 flex-shrink-0">
+                            <div class="card p-4">
+                                <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+                                <div class="card-body text-end">
+                                    <h5 class="card-title">{{ product.name }}</h5>
+                                    <p class="card-text">{{ product.description }}</p>
+                                    <p class="card-text text-success">{{ product.price }} تومان</p>
+                                    <a href="{{ product.get_absolute_url }}" class="btn btn-custom">خرید</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <button class="btn btn-light position-absolute top-50 start-0 translate-middle-y" onclick="scrollCarousel('mass-carousel', -1)">&laquo;</button>
+                    <button class="btn btn-light position-absolute top-50 end-0 translate-middle-y" onclick="scrollCarousel('mass-carousel', 1)">&raquo;</button>
+                </div>
+                <a href="/category/mass-gainers/" class="btn btn-secondary mt-3">مشاهده‌ی تمامی محصولات گینر</a>
+            </div>
+        </div>
+        
+    </section>
+</div>
+
+<script>
+    function scrollCarousel(id, direction) {
+        const carousel = document.getElementById(id);
+        const scrollAmount = direction * (carousel.offsetWidth / 2);
+        carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+</script>
+{% endblock %}

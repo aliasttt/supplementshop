@@ -1,0 +1,151 @@
+{% extends "partitions/base.html" %}
+{% load static %}
+
+{% block head %}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Vazir', sans-serif;
+        background: linear-gradient(120deg, #1e1e1e, #2a2a2a);
+        color: #343a40;
+    }
+
+    .product-card {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin-bottom: 30px;
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+
+    .product-card:hover {
+        transform: scale(1.05);
+    }
+
+    .product-card img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .product-card h3 {
+        font-size: 1.5rem;
+        color: #2575fc;
+        margin: 15px 0;
+    }
+
+    .product-card .price {
+        font-size: 1.2rem;
+        color: #6a11cb;
+    }
+
+    .filter-section {
+        margin-bottom: 30px;
+    }
+
+    .filter-section .search-bar {
+        margin-bottom: 15px;
+    }
+
+    .category-select, .search-bar input {
+        padding: 10px;
+        font-size: 1rem;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-right: 10px;
+    }
+
+    /* توازن فیلترها */
+    .filter-section form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .filter-section select,
+    .filter-section .search-bar input,
+    .filter-section button {
+        flex: 1;
+        min-width: 200px;
+        margin-bottom: 10px;
+    }
+
+    /* تغییرات در ردیف محصولات */
+    .product-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 30px;
+    }
+
+    .btn-primary {
+        background: #2575fc;
+        border: none;
+        transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+        background: #6a11cb;
+        transform: scale(1.05);
+    }
+
+    /* تنظیمات برای موبایل */
+    @media (max-width: 767px) {
+        .product-container {
+            grid-template-columns: repeat(2, 1fr); /* دو ردیف محصول */
+        }
+
+        .filter-section form {
+            justify-content: space-evenly; /* متوازن کردن فیلترها */
+        }
+
+        .filter-section select,
+        .filter-section .search-bar input,
+        .filter-section button {
+            margin-right: 0;
+            margin-bottom: 10px;
+            flex: 1 1 48%;
+        }
+    }
+</style>
+{% endblock head %}
+
+{% block title %}صفحه محصولات{% endblock title %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="filter-section">
+        <form method="get" action="">
+            <div class="d-flex align-items-center">
+                <select name="category" class="category-select">
+                    <option value="">تمام دسته‌ها</option>
+                    
+                    {% for value, label in category %}
+                        <option value="{{ value }}" {% if value == selected_category %}selected{% endif %}>
+                            {{ label }}
+                        </option>
+                    {% endfor %}
+                </select>
+                <div class="search-bar">
+                    <input type="text" name="q" placeholder="جستجو..." value="{{ query }}">
+                </div>
+                <button type="submit" class="btn btn-primary">اعمال فیلتر</button>
+            </div>
+        </form>
+    </div>
+    
+    <div class="product-container">
+        {% for product in products %}
+            <div class="product-card animate__animated animate__fadeIn">
+                <a href="{% url 'supplementapp:product_detail' %}">
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                    <h3>{{ product.name }}</h3>
+                    <p class="price">{{ product.price }} تومان</p>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
