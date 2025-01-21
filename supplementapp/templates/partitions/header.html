@@ -1,16 +1,45 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-        <a class="navbar-brand" href="#">Supplement Shop</a>
+    <div class="container d-flex justify-content-between align-items-center">
+        <!-- برند نوار -->
+        <a class="navbar-brand" href="{% url 'Supplementapp:home' %}">Supplement Shop</a>
+
+        <!-- دکمه کالپس برای موبایل -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
+
+        <!-- منوی ناوبری -->
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link fw-bold" href="{% url "Supplementapp:home" %}">خانه</a></li>
-                <li class="nav-item"><a class="nav-link fw-bold" href="{% url "Supplementapp:product" %}">محصولات</a></li>
-                <li class="nav-item"><a class="nav-link fw-bold" href="{% url "Supplementapp:aboutus" %}">درباره ما</a></li>
-                <li class="nav-item"><a class="nav-link fw-bold" href="{% url "Supplementapp:contactus" %}">ارتباط با ما</a></li>
+                <li class="nav-item"><a class="nav-link fw-bold" href="{% url 'Supplementapp:home' %}">خانه</a></li>
+                <li class="nav-item"><a class="nav-link fw-bold" href="{% url 'Supplementapp:product' %}">محصولات</a></li>
+                <li class="nav-item"><a class="nav-link fw-bold" href="{% url 'Supplementapp:aboutus' %}">درباره ما</a></li>
+                <li class="nav-item"><a class="nav-link fw-bold" href="{% url 'Supplementapp:contactus' %}">ارتباط با ما</a></li>
             </ul>
         </div>
+
+        <!-- منوی زبان (خارج از دکمه کالپس برای دسکتاپ) -->
+        <ul class="navbar-nav d-none d-lg-flex align-items-center ms-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    زبان
+                </a>
+                <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item text-danger" href="#">Türkçe</a></li>
+                    <li><a class="dropdown-item text-danger" href="#">فارسی</a></li>
+                    <li><a class="dropdown-item text-danger" href="#">English</a></li>
+                </ul>
+            </li>
+        </ul>
     </div>
 </nav>
+
+<!-- آیکون سبد خرید ثابت در گوشه پایین سمت چپ -->
+<li class="nav-item fixed-bottom start-0 mb-3 ms-3">
+    <a class="nav-link fw-bold" href="#">
+        <i class="fas fa-shopping-cart" style="font-size: 3rem;"></i>
+        {% if cart_item_count > 0 %}
+            <span class="badge bg-danger rounded-pill" style="position: absolute; top: -5px; right: -5px; font-size: 0.8rem;">{{ cart_item_count }}</span>
+        {% endif %}
+    </a>
+</li>
