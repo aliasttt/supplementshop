@@ -1,0 +1,71 @@
+{% extends 'partitions/base.html' %}
+
+{% block title %}ورود{% endblock title %}
+
+{% block head %}
+
+<style>
+    body{
+        background-color : gray
+    }
+</style>
+
+{% endblock head %}
+
+
+{% block content %}
+
+{% if messages %}
+    <div class="alert alert-danger">
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    </div>
+{% endif %}
+
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+    <div class="card bg-dark text-white p-4 shadow-lg" style="width: 100%; max-width: 400px;">
+        <h3 class="text-center fw-bold mb-4">ورود به حساب کاربری</h3>
+        <form method="post" action="{% url 'Supplementapp:login' %}">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="phone" class="form-label">شماره تلفن</label>
+                <input type="text" class="form-control bg-secondary text-white border-0" id="phone" name="phone" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">رمز عبور</label>
+                <input type="password" class="form-control bg-secondary text-white border-0" id="password" name="password" required>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <div>
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">مرا به خاطر بسپار</label>
+                </div>
+                <a href="#" class="text-danger">رمز عبور خود را فراموش کرده‌اید؟</a>
+            </div>
+            <button type="submit" class="btn btn-danger w-100">ورود</button>
+        </form>
+        <p class="text-center mt-3">
+            حساب کاربری ندارید؟
+            <a href="{% url 'Supplementapp:register' %}" class="text-danger fw-bold">ثبت‌نام</a>
+        </p>
+    </div>
+</div>
+
+{% if form.errors %}
+    <ul>
+        {% for field in form %}
+            {% if field.errors %}
+                <li>
+                    <strong>{{ field.label }}:</strong>
+                    {% for error in field.errors %}
+                        {{ error }}
+                    {% endfor %}
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endif %}
+
+{% endblock content %}

@@ -144,5 +144,9 @@ LANGUAGES = [
     ('fa', 'Farsi'),     
 ]
 
-# تنظیم زبان پیش‌فرض
+#  تنظیم زبان پیشفرض جالبیش اینه که پنل ادمین هم فارسی میشه
 LANGUAGE_CODE = 'fa'
+
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # استفاده از پایگاه داده برای ذخیره نشست‌ها
+SESSION_COOKIE_AGE = 3600 

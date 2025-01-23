@@ -19,6 +19,9 @@ urlpatterns = [
     path('aboutus',views.Aboutus , name = 'aboutus'),
     path('contactus',views.Contactus , name = 'contactus'),
     path('product_detail',views.Product_detail , name = 'product_detail'),
+    path('login',views.Login , name = 'login'),
+    path('register',views.Register , name = 'register'),
+    path('logout',views.Logout , name = 'logout')
 
 ]
 

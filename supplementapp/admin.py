@@ -13,6 +13,16 @@ class ProductAdmin(admin.ModelAdmin):
     list_per_page = 50 
     
 
+@admin.register(RegisterModel)
+class RegisterAdmin(admin.ModelAdmin):
+    list_display = ('name','lastname','email','password','phone')
+    list_editable = ('lastname','email','phone',)
+    list_filter = ('name','lastname')
+    search_fields = ('name','lastname','phone')
+    ordering = ('name','lastname')
+    list_per_page = 50 
+
+
     
 
         
