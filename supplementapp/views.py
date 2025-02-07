@@ -113,23 +113,20 @@ def product_detail(request, pk):
 
 def Login(request):
     if request.method == "POST":
-        phone = request.POST.get('phone')  # شماره تلفن
-        password = request.POST.get('password')  # رمز عبور
+        phone = request.POST.get('phone')      # دریافت شماره تلفن از فرم
+        password = request.POST.get('password')  # دریافت رمز عبور از فرم
 
-        try:
-            # جستجوی کاربر با شماره تلفن
-            user = RegisterModel.objects.get(phone=phone)
-        except RegisterModel.DoesNotExist:
-            user = None
-
-        if user and user.password == password:  # چک کردن رمز عبور
-            # ورود کاربر به سیستم
-            login(request, user)  # ثبت نام در session
-            return redirect("supplementapp:home")  # به صفحه خانه هدایت می‌شود
+        # استفاده از authenticate برای اعتبارسنجی کاربر
+        user = authenticate(request, phone=phone, password=password)
+        
+        if user is not None:
+            # اگر کاربر معتبر بود، وارد سیستم می‌شویم
+            login(request, user)
+            return redirect("supplementapp:home")
         else:
-            # اگر شماره تلفن یا رمز عبور اشتباه بود
-            messages.error(request, 'شماره تلفن یا رمز عبور اشتباه است.')  # نمایش پیام خطا
-            return redirect('supplementapp:login')  # بازگشت به صفحه ورود
+            # در صورت عدم تطابق شماره تلفن یا رمز عبور
+            messages.error(request, 'شماره تلفن یا رمز عبور اشتباه است.')
+            return redirect('supplementapp:login')
 
     return render(request, 'login/login.html')
 
@@ -265,4 +262,22 @@ def Checkout(request):
 
 def Payment_success(request):
     return render(request,'payment_success/payment_success.html')
+
+
+@login_required
+def profile(request):
+    return render(request, 'profile/profile.html', {'user': request.user})
+
+
+
+@login_required
+def orders(request):
+    try:
+        basket = request.user.basket  # سبد خرید کاربر را بگیر
+        items = basket.items.all()  # تمامی آیتم‌های سبد خرید را بگیر
+    except Basket.DoesNotExist:
+        basket = None
+        items = []
+
+    return render(request, 'orders/orders.html', {'basket': basket, 'items': items})
 

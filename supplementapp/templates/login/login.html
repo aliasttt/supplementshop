@@ -3,15 +3,12 @@
 {% block title %}ورود{% endblock title %}
 
 {% block head %}
-
 <style>
-    body{
-        background-color : gray
+    body {
+        background-color: gray;
     }
 </style>
-
 {% endblock head %}
-
 
 {% block content %}
 
@@ -22,7 +19,6 @@
         {% endfor %}
     </div>
 {% endif %}
-
 
 <div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
     <div class="card bg-dark text-white p-4 shadow-lg" style="width: 100%; max-width: 400px;">
@@ -53,6 +49,7 @@
     </div>
 </div>
 
+<!-- اگر از فرم‌های Django استفاده می‌کنید و خطاها را می‌خواهید نمایش دهید -->
 {% if form.errors %}
     <ul>
         {% for field in form %}

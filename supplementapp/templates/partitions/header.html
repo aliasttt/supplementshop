@@ -38,10 +38,10 @@
                 </li>
                 {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link fw-bold" href="#">مشاهده پروفایل</a>
+                        <a class="nav-link fw-bold" href="{% url 'Supplementapp:profile' %}">مشاهده پروفایل</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fw-bold" href="#">سفارشات</a>
+                        <a class="nav-link fw-bold" href="{% url 'Supplementapp:orders' %}">سفارشات</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link fw-bold" href="{% url 'Supplementapp:logout' %}">خروج</a>

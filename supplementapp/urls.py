@@ -27,6 +27,8 @@ urlpatterns = [
     path('remove_from_basket/<int:pk>/', views.remove_from_basket, name='remove_from_basket'),
     path('checkout', views.Checkout, name='checkout'),
     path('payment_success', views.Payment_success, name='payment_success'),
+    path('orders/', orders, name='orders'),
+    path('profile/', profile, name='profile'),
 
 
 ]

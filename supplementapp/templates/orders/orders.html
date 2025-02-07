@@ -1,0 +1,44 @@
+{% extends 'partitions/base.html' %}
+
+{% block title %}سفارشات{% endblock title %}
+
+{% block head %}
+<style>
+    body {
+        background-color: gray;
+    }
+    .order-card {
+        background-color: #1e1e1e;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 15px;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+</style>
+{% endblock head %}
+
+{% block content %}
+
+<div class="container">
+    <h2 class="text-center text-white my-4">سفارشات من</h2>
+
+    {% if orders %}
+        {% for order in orders %}
+        <div class="order-card text-white">
+            <h5>شماره سفارش: {{ order.id }}</h5>
+            <p>تاریخ سفارش: {{ order.date }}</p>
+            <p>وضعیت: <strong class="text-warning">{{ order.status }}</strong></p>
+            <p>مجموع پرداختی: <strong class="text-success">{{ order.total_price }} تومان</strong></p>
+            <ul>
+                {% for item in order.items.all %}
+                <li>{{ item.product.name }} - {{ item.quantity }} عدد</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p class="text-center text-white">هیچ سفارشی ثبت نشده است.</p>
+    {% endif %}
+</div>
+
+{% endblock content %}
