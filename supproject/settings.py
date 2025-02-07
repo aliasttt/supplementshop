@@ -6,6 +6,9 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+AUTH_USER_MODEL = 'supplementapp.RegisterModel'
+
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
@@ -41,9 +44,19 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
+    'corsheaders.middleware.CorsMiddleware', 
     # for corsheaders
+    'django.middleware.locale.LocaleMiddleware',      
+    # برای افزودن زبان
 ]
+
+
+# AUTHENTICATION_BACKENDS = [
+#     'django.contrib.auth.backends.ModelBackend',  
+# ]
+
+
+
 
 CORS_ALLOW_ALL_ORIGINS = True
 
@@ -57,18 +70,19 @@ ROOT_URLCONF = 'supproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / "templates"],  # اگر از دایرکتوری سفارشی برای قالب‌ها استفاده می‌کنید
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
-                'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'supplementapp.context_processors.cart_items_count',  # کانتکست پروسسور شما
             ],
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'supproject.wsgi.application'
 
@@ -148,5 +162,17 @@ LANGUAGES = [
 LANGUAGE_CODE = 'fa'
 
 
+USE_I18N = True    #برای استفاده از بلاک ترنس و gettext
+LOCALE_PATHS = [
+    BASE_DIR / 'locale',  # مسیر فایل‌های ترجمه
+]
+
+#خب برای ایجاد ترجمه و اضافه کردن فایل های زبان مختلف باید محیط مجازی باشه حتما  و حتما باید از یوز ای 18 استفاده بشه مگرنه ارور گت تکست میده تاوقتی از ترنس استغفاده نکنی هیچموقع فایلایه داخل لوکال ساخته نمیشه یه فولدر خالی ایجاد میشه 
+
+
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # استفاده از پایگاه داده برای ذخیره نشست‌ها
 SESSION_COOKIE_AGE = 3600 
+
+
+
+

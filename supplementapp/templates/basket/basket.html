@@ -1,0 +1,145 @@
+{% extends "partitions/base.html" %}
+
+{% block head %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+    .container.sabad {
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+    .quantity-controls {
+        display: flex;
+        align-items: center;
+    }
+    .quantity-btn {
+        background: none;
+        border: none;
+        font-size: 18px;
+        cursor: pointer;
+        padding: 5px;
+    }
+</style>
+
+{% endblock head %}
+
+{% block content %}
+<div class="container sabad">
+    <h2 class="text-center mb-4">سبد خرید</h2>
+    
+    {% if basket_items %}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>محصول</th>
+                    <th>تعداد</th>
+                    <th>قیمت واحد</th>
+                    <th>مجموع</th>
+                    <th>حذف</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in basket_items %}
+                    <tr id="product-{{ item.product.id }}">
+                        <td>
+                            <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" width="50">
+                            {{ item.product.name }}
+                        </td>
+                        <td class="quantity-controls">
+                            <button class="quantity-btn decrease-btn" data-pk="{{ item.product.id }}">−</button>
+                            <span class="quantity" id="quantity-{{ item.product.id }}">{{ item.quantity }}</span>
+                            <button class="quantity-btn increase-btn" data-pk="{{ item.product.id }}">+</button>
+                        </td>
+                        <td>{{ item.product.price }} تومان</td>
+                        <td class="total-price" id="total-{{ item.product.id }}">{{ item.total_price }} تومان</td>
+                        <td>
+                            <button class="btn btn-danger btn-sm remove-btn" data-pk="{{ item.product.id }}">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="d-flex justify-content-between">
+            <h4 id="total-price">مجموع قیمت: {{ total_price }} تومان</h4>
+            <a href="{% url 'Supplementapp:product' %}" class="btn btn-success">ادامه خرید</a>
+            <a href="{% url 'Supplementapp:checkout' %}" class="btn btn-primary">پرداخت</a>
+        </div>
+    {% else %}
+        <p class="text-center">سبد خرید شما خالی است.</p>
+    {% endif %}
+</div>
+
+<script>
+    $(document).ready(function() {
+        $('.remove-btn').on('click', function() {
+            var productId = $(this).data('pk');
+            removeFromBasket(productId);
+        });
+
+        $('.increase-btn').on('click', function() {
+            var productId = $(this).data('pk');
+            updateQuantity(productId, 'increase');
+        });
+
+        $('.decrease-btn').on('click', function() {
+            var productId = $(this).data('pk');
+            updateQuantity(productId, 'decrease');
+        });
+
+        function removeFromBasket(pk) {
+            $.ajax({
+                url: '/remove_from_basket/' + pk + '/',
+                method: 'POST',
+                data: {
+                    'csrfmiddlewaretoken': '{{ csrf_token }}',
+                },
+                success: function(response) {
+                    if (response.status === 'success') {
+                        $('#product-' + pk).remove();
+                        updateTotalPrice();
+                    } else {
+                        alert(response.message);
+                    }
+                },
+                error: function(xhr) {
+                    alert('خطا در حذف محصول!');
+                }
+            });
+        }
+
+        function updateQuantity(pk, action) {
+            $.ajax({
+                url: '/update_quantity/' + pk + '/',
+                method: 'POST',
+                data: {
+                    'action': action,
+                    'csrfmiddlewaretoken': '{{ csrf_token }}',
+                },
+                success: function(response) {
+                    if (response.status === 'success') {
+                        $('#quantity-' + pk).text(response.new_quantity);
+                        $('#total-' + pk).text(response.new_total_price + ' تومان');
+                        updateTotalPrice();
+                    } else {
+                        alert(response.message);
+                    }
+                },
+                error: function(xhr) {
+                    alert('خطا در بروزرسانی تعداد!');
+                }
+            });
+        }
+
+        function updateTotalPrice() {
+            let total = 0;
+            $('.total-price').each(function() {
+                total += parseInt($(this).text().replace(' تومان', ''));
+            });
+            $('#total-price').text('مجموع قیمت: ' + total + ' تومان');
+        }
+    });
+</script>
+{% endblock content %}

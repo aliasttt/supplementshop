@@ -15,7 +15,7 @@ class ProductAdmin(admin.ModelAdmin):
 
 @admin.register(RegisterModel)
 class RegisterAdmin(admin.ModelAdmin):
-    list_display = ('name','lastname','email','password','phone')
+    list_display = ('name','lastname','email','phone')
     list_editable = ('lastname','email','phone',)
     list_filter = ('name','lastname')
     search_fields = ('name','lastname','phone')

@@ -1,8 +1,10 @@
 {% extends 'partitions/base.html' %}
+{% load i18n %}
 
 {% block content %}
 <!-- اضافه کردن لینک‌های AOS -->
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
 <style>
@@ -61,20 +63,20 @@
 
 <div data-aos="fade-up">
     <div class="hero text-center mt-5">
-        <h1>به فروشگاه ما خوش آمدید</h1>
-        <p>مقصد نهایی شما برای خرید مکمل‌های باکیفیت!</p>
-        <a href="#products" class="btn btn-custom">هم‌اکنون خرید کنید</a>
+        <h1>{% trans "به فروشگاه ما خوش آمدید" %}</h1> 
+        <p>{% trans "مقصد نهایی شما برای خرید مکمل‌های باکیفیت!" %}</p>
+        <a href="#products" class="btn btn-custom">{% trans "هم‌اکنون خرید کنید" %}</a>
     </div>
 </div>
 
 <!-- بخش محصولات -->
 <section id="products" class="py-5">
     <div class="container">
-        <h2 class="text-center mb-4" data-aos="fade-right">محصولات ما</h2>
+        <h2 class="text-center mb-4" data-aos="fade-right">{% trans "محصولات ما" %}</h2>
 
         <!-- ردیف 1: پروتئین وی -->
         <div class="row mb-5" data-aos="fade-left">
-            <h3 class="mb-3 text-end">پروتئین وی</h3>
+            <h3 class="mb-3 text-end">{% trans "پروتئین وی" %}</h3>
             <div class="position-relative">
                 <div id="whey-carousel" class="row g-4 d-flex flex-nowrap overflow-hidden">
                     {% for product in whey_protein %}
@@ -85,7 +87,7 @@
                                 <h5 class="card-title">{{ product.name }}</h5>
                                 <p class="card-text">{{ product.description }}</p>
                                 <p class="card-text text-success">{{ product.price }} تومان</p>
-                                <a href="{{ product.get_absolute_url }}" class="btn btn-custom">خرید</a>
+                                <a href="{% url 'supplementapp:product_detail' pk=product.id %}" class="btn btn-custom">{% trans "خرید" %}</a>
                             </div>
                         </div>
                     </div>
@@ -94,12 +96,12 @@
                 <button class="btn btn-light position-absolute top-50 start-0 translate-middle-y" onclick="scrollCarousel('whey-carousel', -1)">&laquo;</button>
                 <button class="btn btn-light position-absolute top-50 end-0 translate-middle-y" onclick="scrollCarousel('whey-carousel', 1)">&raquo;</button>
             </div>
-            <a href="/category/whey-protein/" class="btn btn-secondary mt-3">مشاهده‌ی تمامی محصولات پروتئین وی</a>
+            <a href="/category/whey-protein/" class="btn btn-secondary mt-3">{% trans "مشاهده‌ی تمامی محصولات پروتئین وی" %}</a>
         </div>
 
         <!-- ردیف 2: گینرها -->
         <div class="row mb-5" data-aos="fade-right">
-            <h3 class="mb-3 text-end">گینرها</h3>
+            <h3 class="mb-3 text-end">{% trans "گینرها" %}</h3>
             <div class="position-relative">
                 <div id="mass-carousel" class="row g-4 d-flex flex-nowrap overflow-hidden">
                     {% for product in mass_gainers %}
@@ -110,7 +112,9 @@
                                 <h5 class="card-title">{{ product.name }}</h5>
                                 <p class="card-text">{{ product.description }}</p>
                                 <p class="card-text text-success">{{ product.price }} تومان</p>
-                                <a href="{{ product.get_absolute_url }}" class="btn btn-custom">خرید</a>
+                                <a href="{% url 'supplementapp:product_detail' pk=product.id %}" class="btn btn-custom">{% trans "خرید" %}</a>
+
+
                             </div>
                         </div>
                     </div>
@@ -119,7 +123,7 @@
                 <button class="btn btn-light position-absolute top-50 start-0 translate-middle-y" onclick="scrollCarousel('mass-carousel', -1)">&laquo;</button>
                 <button class="btn btn-light position-absolute top-50 end-0 translate-middle-y" onclick="scrollCarousel('mass-carousel', 1)">&raquo;</button>
             </div>
-            <a href="/category/mass-gainers/" class="btn btn-secondary mt-3">مشاهده‌ی تمامی محصولات گینر</a>
+            <a href="/category/mass-gainers/" class="btn btn-secondary mt-3">{% trans "مشاهده‌ی تمامی محصولات گینر" %}</a>
         </div>
     </div>
 </section>

@@ -1,0 +1,55 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-26 11:46+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+#: .\supplementapp\templates\home\home.html:64
+msgid "به فروشگاه ما خوش آمدید"
+msgstr ""
+
+#: .\supplementapp\templates\home\home.html:65
+msgid "مقصد نهایی شما برای خرید مکمل‌های باکیفیت!"
+msgstr ""
+
+#: .\supplementapp\templates\home\home.html:66
+msgid "هم‌اکنون خرید کنید"
+msgstr ""
+
+#: .\supplementapp\templates\home\home.html:73
+msgid "محصولات ما"
+msgstr ""
+
+#: .\supplementapp\templates\home\home.html:77
+msgid "پروتئین وی"
+msgstr ""
+
+#: .\supplementapp\templates\home\home.html:88
+#: .\supplementapp\templates\home\home.html:113
+msgid "خرید"
+msgstr ""
+
+#: .\supplementapp\templates\home\home.html:97
+msgid "مشاهده‌ی تمامی محصولات پروتئین وی"
+msgstr ""
+
+#: .\supplementapp\templates\home\home.html:102
+msgid "گینرها"
+msgstr ""
+
+#: .\supplementapp\templates\home\home.html:122
+msgid "مشاهده‌ی تمامی محصولات گینر"
+msgstr ""

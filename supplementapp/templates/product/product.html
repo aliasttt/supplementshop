@@ -121,7 +121,6 @@
             <div class="d-flex align-items-center">
                 <select name="category" class="category-select">
                     <option value="">تمام دسته‌ها</option>
-                    
                     {% for value, label in category %}
                         <option value="{{ value }}" {% if value == selected_category %}selected{% endif %}>
                             {{ label }}
@@ -139,7 +138,7 @@
     <div class="product-container">
         {% for product in products %}
             <div class="product-card animate__animated animate__fadeIn">
-                <a href="{% url 'supplementapp:product_detail' %}">
+                <a href="{% url 'supplementapp:product_detail' pk=product.id  %}">
                     <img src="{{ product.image.url }}" alt="{{ product.name }}">
                     <h3>{{ product.name }}</h3>
                     <p class="price">{{ product.price }} تومان</p>
