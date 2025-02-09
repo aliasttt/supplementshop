@@ -1,6 +1,10 @@
 
 import os
+import dj_database_url
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -13,7 +17,7 @@ AUTH_USER_MODEL = 'supplementapp.RegisterModel'
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-2ch-p0%n@p2flv1dy(e4!=(2@q2xvb_ol_ji74o^8&8(@01d52'
+SECRET_KEY = '02a16fbd97299a5496800ddfddd0ba15a458386a18df3830629fee80469d6596023de3c0e79656797dbf8ce362a33208ba63'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -95,6 +99,11 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+}
+
+DATABASES ={
+
+    "default" :dj_database_url.config(default = os.environ.get("DATABASE_URL"))
 }
 
 
