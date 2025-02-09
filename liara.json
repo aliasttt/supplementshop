@@ -1,0 +1,9 @@
+{
+    "app":"optimistic-williams--s3draizb",
+    "port":80,
+    "build":{
+    "location":"iran"
+    },
+    "disks":[]
+
+    }
