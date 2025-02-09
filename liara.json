@@ -1,11 +1,8 @@
 {
-    "platform": "python",
-    "app": "supplement",
-    "port": 8000,
-    "build": {
-      "location": "iran"
+    "app":"supplement",
+    "port":80,
+    "build":{
+    "location":"iran"
     },
-    "disks": [],
-    "start": "python manage.py runserver 0.0.0.0:8000"
-  }
-  
+    "disks":[]
+    }
