@@ -4,7 +4,6 @@
 {% block content %}
 <!-- اضافه کردن لینک‌های AOS -->
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
 <style>
@@ -15,7 +14,6 @@
         color: #fff;
         overflow-x: hidden;
     }
-
     .card {
         background: rgba(255, 255, 255, 0.1);
         border: none;
@@ -24,12 +22,10 @@
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
     .card:hover {
         transform: scale(1.05);
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
     }
-
     .btn-custom {
         background: linear-gradient(90deg, #ff5722, #ff9800);
         color: #fff;
@@ -38,23 +34,19 @@
         padding: 0.5rem 1.5rem;
         transition: background 0.3s ease;
     }
-
     .btn-custom:hover {
         background: linear-gradient(90deg, #ff9800, #ff5722);
     }
-
     .hero {
         padding: 4rem 2rem;
         background: linear-gradient(120deg, #2a2a2a, #1e1e1e);
         border-radius: 15px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
-
     .hero h1 {
         font-size: 3rem;
         margin-bottom: 1rem;
     }
-
     .hero p {
         font-size: 1.25rem;
         margin-bottom: 2rem;
@@ -96,7 +88,7 @@
                 <button class="btn btn-light position-absolute top-50 start-0 translate-middle-y" onclick="scrollCarousel('whey-carousel', -1)">&laquo;</button>
                 <button class="btn btn-light position-absolute top-50 end-0 translate-middle-y" onclick="scrollCarousel('whey-carousel', 1)">&raquo;</button>
             </div>
-            <a href="/product/whey-protein/" class="btn btn-secondary mt-3">{% trans "مشاهده‌ی تمامی محصولات پروتئین وی" %}</a>
+            <a href="{% url 'supplementapp:product' %}?category=whey" class="btn btn-secondary mt-3">{% trans "مشاهده‌ی تمامی محصولات پروتئین وی" %}</a>
         </div>
 
         <!-- ردیف 2: گینرها -->
@@ -121,7 +113,7 @@
                 <button class="btn btn-light position-absolute top-50 start-0 translate-middle-y" onclick="scrollCarousel('mass-carousel', -1)">&laquo;</button>
                 <button class="btn btn-light position-absolute top-50 end-0 translate-middle-y" onclick="scrollCarousel('mass-carousel', 1)">&raquo;</button>
             </div>
-            <a href="/product/mass-gainers/" class="btn btn-secondary mt-3">{% trans "مشاهده‌ی تمامی محصولات گینر" %}</a>
+            <a href="{% url 'supplementapp:product' %}?category=mass_gainer" class="btn btn-secondary mt-3">{% trans "مشاهده‌ی تمامی محصولات گینر" %}</a>
         </div>
 
         <!-- ردیف 3: کازعین -->
@@ -146,7 +138,7 @@
                 <button class="btn btn-light position-absolute top-50 start-0 translate-middle-y" onclick="scrollCarousel('casein-carousel', -1)">&laquo;</button>
                 <button class="btn btn-light position-absolute top-50 end-0 translate-middle-y" onclick="scrollCarousel('casein-carousel', 1)">&raquo;</button>
             </div>
-            <a href="/product/casein/" class="btn btn-secondary mt-3">{% trans "مشاهده‌ی تمامی محصولات کازعین" %}</a>
+            <a href="{% url 'supplementapp:product' %}?category=casein" class="btn btn-secondary mt-3">{% trans "مشاهده‌ی تمامی محصولات کازعین" %}</a>
         </div>
 
         <!-- ردیف 4: ایزوله -->
@@ -171,7 +163,7 @@
                 <button class="btn btn-light position-absolute top-50 start-0 translate-middle-y" onclick="scrollCarousel('isolate-carousel', -1)">&laquo;</button>
                 <button class="btn btn-light position-absolute top-50 end-0 translate-middle-y" onclick="scrollCarousel('isolate-carousel', 1)">&raquo;</button>
             </div>
-            <a href="/product/isolate/" class="btn btn-secondary mt-3">{% trans "مشاهده‌ی تمامی محصولات ایزوله" %}</a>
+            <a href="{% url 'supplementapp:product' %}?category=isolate" class="btn btn-secondary mt-3">{% trans "مشاهده‌ی تمامی محصولات ایزوله" %}</a>
         </div>
     </div>
 </section>
