@@ -21,7 +21,7 @@ AUTH_USER_MODEL = 'supplementapp.RegisterModel'
 SECRET_KEY = '02a16fbd97299a5496800ddfddd0ba15a458386a18df3830629fee80469d6596023de3c0e79656797dbf8ce362a33208ba63'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
