@@ -1,74 +1,82 @@
+<!-- لینک FontAwesome جهت نمایش آیکون‌ها -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-  <div class="container-fluid">
-    <!-- بخش سمت چپ: لوگو و آیکون سبد خرید موبایلی -->
-    <div class="d-flex align-items-center">
-      <!-- لوگو/برند -->
-      <a class="navbar-brand" href="{% url 'Supplementapp:home' %}">Supplement Shop</a>
-      <!-- آیکون سبد خرید در موبایل (نمایش فقط در صفحه‌های کوچک) -->
-      <a href="{% url 'supplementapp:basket' %}" class="d-lg-none text-white ms-2">
-        <i class="fas fa-shopping-cart"></i>
-        <span class="badge rounded-pill bg-danger">{{ cart_items_count }}</span>
-      </a>
-    </div>
-
-    <!-- دکمه toggler (آیکون سه خط) -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <!-- منوی ناوبری و آیکون سبد خرید دسکتاپ -->
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto align-items-lg-center">
-        <li class="nav-item">
-          <a class="nav-link fw-bold" href="{% url 'Supplementapp:home' %}">خانه</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link fw-bold" href="{% url 'Supplementapp:product' %}">محصولات</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link fw-bold" href="{% url 'Supplementapp:aboutus' %}">درباره ما</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link fw-bold" href="{% url 'Supplementapp:contactus' %}">ارتباط با ما</a>
-        </li>
-        {% if user.is_authenticated %}
-          <li class="nav-item">
-            <a class="nav-link fw-bold" href="{% url 'Supplementapp:profile' %}">مشاهده پروفایل</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fw-bold" href="{% url 'Supplementapp:orders' %}">سفارشات</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fw-bold" href="{% url 'Supplementapp:logout' %}">خروج</a>
-          </li>
-        {% else %}
-          <li class="nav-item">
-            <a class="nav-link fw-bold" href="{% url 'Supplementapp:login' %}">ورود</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fw-bold" href="{% url 'Supplementapp:register' %}">ثبت نام</a>
-          </li>
-        {% endif %}
-      </ul>
-      <!-- آیکون سبد خرید برای دسکتاپ (نمایش در صفحه‌های بزرگ) -->
-      <div class="d-none d-lg-block ms-3">
-        <a href="{% url 'supplementapp:basket' %}" class="position-relative text-white">
-          <i class="fas fa-shopping-cart"></i>
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-            {{ cart_items_count }}
-          </span>
+    <div class="container">
+        <!-- لوگو/برند (همیشه قابل مشاهده) -->
+        <a class="navbar-brand" href="{% url 'Supplementapp:home' %}">Supplement Shop</a>
+        
+        <!-- آیکون سبد خرید برای موبایل (نمایش در صفحه‌های کوچک) -->
+        <a href="{% url 'supplementapp:basket' %}" class="text-white d-lg-none me-2">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="badge rounded-pill bg-danger">{{ cart_items_count }}</span>
         </a>
-      </div>
+        
+        <!-- دکمه کالپس (هامبورگر) -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <!-- منو و آیکون سبد خرید برای دسکتاپ -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- لینک‌های منو -->
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link fw-bold" href="{% url 'Supplementapp:home' %}">خانه</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-bold" href="{% url 'Supplementapp:product' %}">محصولات</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-bold" href="{% url 'Supplementapp:aboutus' %}">درباره ما</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-bold" href="{% url 'Supplementapp:contactus' %}">ارتباط با ما</a>
+                </li>
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold" href="{% url 'Supplementapp:profile' %}">مشاهده پروفایل</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold" href="{% url 'Supplementapp:orders' %}">سفارشات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold" href="{% url 'Supplementapp:logout' %}">خروج</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold" href="{% url 'Supplementapp:login' %}">ورود</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold" href="{% url 'Supplementapp:register' %}">ثبت نام</a>
+                    </li>
+                {% endif %}
+            </ul>
+            
+            <!-- آیکون سبد خرید برای دسکتاپ (نمایش در صفحه‌های بزرگ) -->
+            <div class="d-none d-lg-block ms-3">
+                <a href="{% url 'supplementapp:basket' %}" class="position-relative text-white">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-item-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        {{ cart_items_count }}
+                    </span>
+                </a>
+            </div>
+        </div>
     </div>
-  </div>
 </nav>
 
+<!-- استایل‌های اختصاصی -->
 <style>
   /* جلوگیری از ایجاد اسکرول افقی */
   body {
     overflow-x: hidden;
+  }
+  /* در صورت نیاز تنظیم فاصله‌های اضافی در موبایل */
+  @media (max-width: 991.98px) {
+    .ms-3 {
+      margin-left: 0 !important;
+    }
   }
 </style>
