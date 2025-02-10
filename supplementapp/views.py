@@ -25,13 +25,17 @@ def home(request):
 
 
     products = ProductModel.objects.all()
-    whey_protein = products.filter(category='whey')  # محصولات Whey
-    mass_gainers = products.filter(category='mass_gainer')  # محصولات Mass Gainers
+    whey_protein = products.filter(category='whey')  
+    mass_gainers = products.filter(category='mass_gainer') 
+    caseine = products.filter(category='casein')
+    isolate = products.filter(category='isolate')
 
     context = {
         'products': products,
         'whey_protein': whey_protein,
         'mass_gainers': mass_gainers,
+        'isolate' : isolate,
+        'caseine':caseine,
         
     }
     return render(request, 'home/home.html', context)
