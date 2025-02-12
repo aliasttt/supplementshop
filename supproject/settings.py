@@ -184,5 +184,46 @@ SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # استفاده از پ
 SESSION_COOKIE_AGE = 3600 
 
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'aliasadi3853@gmail.com'
+EMAIL_HOST_PASSWORD = 'spplwkgtxdfrurpe'
+EMAIL_USE_TLS = True
+
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # ذخیره session در دیتابیس
+SESSION_COOKIE_AGE = 1209600  # طول عمر session (در ثانیه، اینجا دو هفته)
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True  # پایان session با بسته شدن مرورگر
+
+
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+# pip freeze > requirements.txt
+
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_HTTPONLY = True
+CSRF_COOKIE_HTTPONLY = True
+
+
+SECURE_HSTS_SECONDS = 31536000
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+
+SECURE_CONTENT_TYPE_NOSNIFF = True
+
+
+X_FRAME_OPTIONS = 'DENY'
+
+
+
+AXES_FAILURE_LIMIT = 5  # تعداد دفعات تلاش ناموفق قبل از مسدودسازی
+AXES_COOLOFF_TIME = 24  # زمان مسدودسازی به ساعت
+
+
+
 
 

@@ -7,10 +7,9 @@
     body {
         background-color: gray;
     }
-    .card{
-        margin-top:50px;
-        margin-bottom:50px;
-
+    .card {
+        margin-top: 50px;
+        margin-bottom: 50px;
     }
 </style>
 {% endblock head %}
@@ -38,12 +37,8 @@
                 <label for="password" class="form-label">رمز عبور</label>
                 <input type="password" class="form-control bg-secondary text-white border-0" id="password" name="password" required>
             </div>
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <div>
-                    <input type="checkbox" id="remember" name="remember">
-                    <label for="remember">مرا به خاطر بسپار</label>
-                </div>
-                <a href="#" class="text-danger">رمز عبور خود را فراموش کرده‌اید؟</a>
+            <div class="d-flex justify-content-end align-items-center mb-3">
+                <a href="{% url 'Supplementapp:password_reset' %}" class="text-danger">رمز عبور خود را فراموش کرده‌اید؟</a>
             </div>
             <button type="submit" class="btn btn-danger w-100">ورود</button>
         </form>
