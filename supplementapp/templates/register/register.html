@@ -23,7 +23,7 @@
 <div class="container d-flex justify-content-center align-items-center mt-5 mb-5" style="min-height: 80vh;">
     <div class="card bg-dark text-white p-4  shadow-lg " style="width: 100%; max-width: 400px;">
         <h3 class="text-center fw-bold mb-4">ثبت‌نام حساب کاربری</h3>
-        <form method="post" action="{% url 'Supplementapp:register' %}">
+        <form method="post" action="{% url 'supplementapp:register' %}">
             {% csrf_token %}
             <div class="mb-3">
                 <label for="name" class="form-label">نام</label>
@@ -54,7 +54,7 @@
         </form>
         <p class="text-center mt-3">
             قبلاً حساب کاربری ساخته‌اید؟
-            <a href="{% url 'Supplementapp:login' %}" class="text-danger fw-bold">ورود</a>
+            <a href="{% url 'supplementapp:login' %}" class="text-danger fw-bold">ورود</a>
         </p>
     </div>
 </div>

@@ -21,7 +21,7 @@ AUTH_USER_MODEL = 'supplementapp.RegisterModel'
 SECRET_KEY = '02a16fbd97299a5496800ddfddd0ba15a458386a18df3830629fee80469d6596023de3c0e79656797dbf8ce362a33208ba63'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -95,17 +95,17 @@ WSGI_APPLICATION = 'supproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-      'default': {
-          'ENGINE': 'django.db.backends.sqlite3',
-          'NAME': BASE_DIR / 'db.sqlite3',
-      }
+# DATABASES = {
+#       'default': {
+#           'ENGINE': 'django.db.backends.sqlite3',
+#           'NAME': BASE_DIR / 'db.sqlite3',
+#       }
+#   }
+
+DATABASES ={
+
+      "default" :dj_database_url.config(default = os.environ.get("DATABASE_URL"))
   }
-
-# DATABASES ={
-
-#      "default" :dj_database_url.config(default = os.environ.get("DATABASE_URL"))
-#  }
 
 
 # Password validation
@@ -188,7 +188,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'aliasadi3853@gmail.com'
-EMAIL_HOST_PASSWORD = 'spplwkgtxdfrurpe'
+EMAIL_HOST_PASSWORD = 'yejvhcmsytydwyha'
 EMAIL_USE_TLS = True
 
 

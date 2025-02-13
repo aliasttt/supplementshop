@@ -14,6 +14,7 @@ from django.shortcuts import render, get_object_or_404
 from django.template.loader import render_to_string
 from django.http import JsonResponse 
 from django.views.decorators.csrf import csrf_exempt
+from django.conf import settings
 
 
 
@@ -71,35 +72,31 @@ class Productviewset(viewsets.ModelViewSet):
 
 def Contactus(request):
     status = None
-    form = Contactusform(request.POST or None)  # اینجا فرم را بر اساس داده‌های POST یا خالی می‌سازیم
+    form = Contactusform(request.POST or None)
 
     if request.method == 'POST':
-        if form.is_valid():  # اگر فرم معتبر باشد
+        if form.is_valid():
             name = form.cleaned_data['name']
             email = form.cleaned_data['email']
             phone = form.cleaned_data["phone"]
             subject = form.cleaned_data['subject']
             text = form.cleaned_data['text']
 
-            # ساخت پیام ایمیل
             email_subject = f"New Message from {name}"
             email_message = f"Name: {name}\nEmail: {email}\n\n{subject}\n {phone}\n Message:\n{text}\n "
-            from_email = 'aliasadi3853@gmail.com'
-            recipient_list = ['aliasadi3853@gmail.com']  # ایمیل دریافت‌کننده
-
+            from_email = settings.EMAIL_HOST_USER
+            recipient_list = ['aliasadi3853@gmail.com']
 
             try:
-                send_mail(email_subject, email_message, from_email, recipient_list)  # ارسال ایمیل
-                status = 200  # تنظیم وضعیت موفقیت
-                return redirect('supplementapp:contactus')  # ریدایرکت به صفحه موفقیت
+                send_mail(email_subject, email_message, from_email, recipient_list)
+                status = 'success'
             except Exception as e:
-                status = 500  # در صورت بروز خطا در ارسال ایمیل
-                print("Error sending email:", e)
+                status = 'error'
+                print(f"Error sending email: {e}")
 
     return render(request, 'contactus/contactus.html', {'form': form, 'status': status})
 
-
-
+# اگه کل فیلد های تعریف شده در فایل اچ تی ام ال نباشه باعص میشه ایمیل کار نکنه پس هر متغیری که اینجا میگیری تو صفحه اچ تی ام ال بزار 
 
 def Aboutus(request):
     return render(request,'aboutus/aboutus.html')
@@ -170,7 +167,7 @@ def Register(request):
             login(request, user)  # وارد کردن کاربر پس از ثبت‌نام
 
             # هدایت به صفحه خانه بعد از ورود موفق
-            return redirect("Supplementapp:home")  # به صفحه خانه هدایت می‌شود
+            return redirect("supplementapp:home")  # به صفحه خانه هدایت می‌شود
         else:
             # در صورت وجود خطا در فرم
             return render(request, 'register/register.html', {'form': form})
