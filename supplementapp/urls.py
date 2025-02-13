@@ -60,7 +60,8 @@ urlpatterns = [
             template_name='password/password_reset_complete.html'
         ),
         name='password_reset_complete'
-    )
+    ),
+    # اگر این یو ار ال ها برای ریست کردن پسورد کار نکرد مشکل ازینه که نباید نیم اسپیس داشته باشیم اونو پاک کنی حل میشه
 ]
 
 
