@@ -123,11 +123,11 @@ def Login(request):
         if user is not None:
             # اگر کاربر معتبر بود، وارد سیستم می‌شویم
             login(request, user)
-            return redirect("supplementapp:home")
+            return redirect("home")
         else:
             # در صورت عدم تطابق شماره تلفن یا رمز عبور
             messages.error(request, 'شماره تلفن یا رمز عبور اشتباه است.')
-            return redirect('supplementapp:login')
+            return redirect('login')
 
     return render(request, 'login/login.html')
 
@@ -136,7 +136,7 @@ def Login(request):
 
 def Logout(request):
     logout(request)
-    return redirect('supplementapp:home')
+    return redirect('home')
 
 
 
@@ -167,7 +167,7 @@ def Register(request):
             login(request, user)  # وارد کردن کاربر پس از ثبت‌نام
 
             # هدایت به صفحه خانه بعد از ورود موفق
-            return redirect("supplementapp:home")  # به صفحه خانه هدایت می‌شود
+            return redirect("home")  # به صفحه خانه هدایت می‌شود
         else:
             # در صورت وجود خطا در فرم
             return render(request, 'register/register.html', {'form': form})
@@ -193,10 +193,10 @@ def Add_to_basket(request, pk):
             basket[str(pk)] = 1  # اگر محصول جدید است، آن را به سبد اضافه می‌کنیم
 
         request.session['basket'] = basket  # ذخیره مجدد سبد خرید در session
-        return redirect(reverse('supplementapp:product_detail', kwargs={'pk': pk}))
+        return redirect(reverse('product_detail', kwargs={'pk': pk}))
 
     except ProductModel.DoesNotExist:
-        return redirect('supplementapp:product_list')
+        return redirect('product_list')
 
 
 
@@ -246,7 +246,7 @@ def remove_from_basket(request, pk):
 def Checkout(request):
     basket = request.session.get('basket', {})
     if not basket:
-        return redirect('supplementapp:basket')  # اگر سبد خالی بود به صفحه سبد خرید برگرد
+        return redirect('basket')  # اگر سبد خالی بود به صفحه سبد خرید برگرد
 
     # نمایش صفحه چک‌اوت با اطلاعات سبد خرید
     basket_items = []

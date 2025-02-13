@@ -5,9 +5,10 @@ from django.conf.urls.static import static
 from rest_framework.routers import DefaultRouter
 from .views import *
 from django.contrib.auth import views as auth_views
+from django.urls import reverse_lazy
 
 
-app_name = "supplementapp"
+
 
 
 router = DefaultRouter()
@@ -33,7 +34,8 @@ urlpatterns = [
     path(
         'password-reset/',
         auth_views.PasswordResetView.as_view(
-            template_name='password/password_reset_form.html'
+            template_name='password/password_reset_form.html',
+            success_url=reverse_lazy('password_reset_done')
         ),
         name='password_reset'
     ),
@@ -47,7 +49,8 @@ urlpatterns = [
     path(
         'password-reset-confirm/<uidb64>/<token>/',
         auth_views.PasswordResetConfirmView.as_view(
-            template_name='password/password_reset_confirm.html'
+            template_name='password/password_reset_confirm.html',
+            success_url=reverse_lazy('password_reset_complete')
         ),
         name='password_reset_confirm'
     ),
@@ -57,7 +60,7 @@ urlpatterns = [
             template_name='password/password_reset_complete.html'
         ),
         name='password_reset_complete'
-    ),
+    )
 ]
 
 

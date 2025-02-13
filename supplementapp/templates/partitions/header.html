@@ -4,10 +4,10 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
         <!-- لوگو/برند (همیشه قابل مشاهده) -->
-        <a class="navbar-brand" href="{% url 'supplementapp:home' %}">Supplement Shop</a>
+        <a class="navbar-brand" href="{% url 'home' %}">Supplement Shop</a>
         
         <!-- آیکون سبد خرید برای موبایل (نمایش در صفحه‌های کوچک) -->
-        <a href="{% url 'supplementapp:basket' %}" class="text-white d-lg-none me-2">
+        <a href="{% url 'basket' %}" class="text-white d-lg-none me-2">
             <i class="fas fa-shopping-cart"></i>
             <span class="badge rounded-pill bg-danger">{{ cart_items_count }}</span>
         </a>
@@ -23,40 +23,40 @@
             <!-- لینک‌های منو -->
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link fw-bold" href="{% url 'supplementapp:home' %}">خانه</a>
+                    <a class="nav-link fw-bold" href="{% url 'home' %}">خانه</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link fw-bold" href="{% url 'supplementapp:product' %}">محصولات</a>
+                    <a class="nav-link fw-bold" href="{% url 'product' %}">محصولات</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link fw-bold" href="{% url 'supplementapp:aboutus' %}">درباره ما</a>
+                    <a class="nav-link fw-bold" href="{% url 'aboutus' %}">درباره ما</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link fw-bold" href="{% url 'supplementapp:contactus' %}">ارتباط با ما</a>
+                    <a class="nav-link fw-bold" href="{% url 'contactus' %}">ارتباط با ما</a>
                 </li>
                 {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link fw-bold" href="{% url 'supplementapp:profile' %}">مشاهده پروفایل</a>
+                        <a class="nav-link fw-bold" href="{% url 'profile' %}">مشاهده پروفایل</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fw-bold" href="{% url 'supplementapp:orders' %}">سفارشات</a>
+                        <a class="nav-link fw-bold" href="{% url 'orders' %}">سفارشات</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fw-bold" href="{% url 'supplementapp:logout' %}">خروج</a>
+                        <a class="nav-link fw-bold" href="{% url 'logout' %}">خروج</a>
                     </li>
                 {% else %}
                     <li class="nav-item">
-                        <a class="nav-link fw-bold" href="{% url 'supplementapp:login' %}">ورود</a>
+                        <a class="nav-link fw-bold" href="{% url 'login' %}">ورود</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fw-bold" href="{% url 'supplementapp:register' %}">ثبت نام</a>
+                        <a class="nav-link fw-bold" href="{% url 'register' %}">ثبت نام</a>
                     </li>
                 {% endif %}
             </ul>
             
             <!-- آیکون سبد خرید برای دسکتاپ (نمایش در صفحه‌های بزرگ) -->
             <div class="d-none d-lg-block ms-3">
-                <a href="{% url 'supplementapp:basket' %}" class="position-relative text-white">
+                <a href="{% url 'basket' %}" class="position-relative text-white">
                     <i class="fas fa-shopping-cart"></i>
                     <span id="cart-item-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                         {{ cart_items_count }}

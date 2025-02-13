@@ -27,7 +27,7 @@
 <div class="container d-flex justify-content-center align-items-center mt-5" style="min-height: 80vh;">
     <div class="card bg-dark text-white p-4 shadow-lg" style="width: 100%; max-width: 400px;">
         <h3 class="text-center fw-bold mb-4">ورود به حساب کاربری</h3>
-        <form method="post" action="{% url 'supplementapp:login' %}">
+        <form method="post" action="{% url 'login' %}">
             {% csrf_token %}
             <div class="mb-3">
                 <label for="phone" class="form-label">شماره تلفن</label>
@@ -38,13 +38,13 @@
                 <input type="password" class="form-control bg-secondary text-white border-0" id="password" name="password" required>
             </div>
             <div class="d-flex justify-content-end align-items-center mb-3">
-                <a href="{% url 'supplementapp:password_reset' %}" class="text-danger">رمز عبور خود را فراموش کرده‌اید؟</a>
+                <a href="{% url 'password_reset' %}" class="text-danger">رمز عبور خود را فراموش کرده‌اید؟</a>
             </div>
             <button type="submit" class="btn btn-danger w-100">ورود</button>
         </form>
         <p class="text-center mt-3">
             حساب کاربری ندارید؟
-            <a href="{% url 'supplementapp:register' %}" class="text-danger fw-bold">ثبت‌نام</a>
+            <a href="{% url 'register' %}" class="text-danger fw-bold">ثبت‌نام</a>
         </p>
     </div>
 </div>

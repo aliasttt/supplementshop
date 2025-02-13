@@ -64,8 +64,8 @@
         </table>
         <div class="d-flex justify-content-between">
             <h4 id="total-price">مجموع قیمت: {{ total_price }} تومان</h4>
-            <a href="{% url 'Supplementapp:product' %}" class="btn btn-success">ادامه خرید</a>
-            <a href="{% url 'Supplementapp:checkout' %}" class="btn btn-primary">پرداخت</a>
+            <a href="{% url 'product' %}" class="btn btn-success">ادامه خرید</a>
+            <a href="{% url 'checkout' %}" class="btn btn-primary">پرداخت</a>
         </div>
     {% else %}
         <p class="text-center">سبد خرید شما خالی است.</p>

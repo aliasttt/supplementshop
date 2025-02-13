@@ -107,7 +107,7 @@
   <div class="hero text-center mt-5 container">
     <h1>{% trans "به فروشگاه ما خوش آمدید" %}</h1> 
     <p>{% trans "مقصد نهایی شما برای خرید مکمل‌های باکیفیت!" %}</p>
-    <a href="{% url 'supplementapp:product' %}" class="btn btn-custom">{% trans "هم‌اکنون خرید کنید" %}</a>
+    <a href="{% url 'product' %}" class="btn btn-custom">{% trans "هم‌اکنون خرید کنید" %}</a>
   </div>
 </div>
 
@@ -129,7 +129,7 @@
                 <h5 class="card-title">{{ product.name }}</h5>
                 <p class="card-text">{{ product.description }}</p>
                 <p class="card-text text-success">{{ product.price }} تومان</p>
-                <a href="{% url 'supplementapp:product_detail' pk=product.id %}" class="btn btn-custom">{% trans "خرید" %}</a>
+                <a href="{% url 'product_detail' pk=product.id %}" class="btn btn-custom">{% trans "خرید" %}</a>
               </div>
             </div>
           </div>
@@ -138,7 +138,7 @@
         <button class="btn btn-light carousel-nav-btn position-absolute top-50 start-0 translate-middle-y" onclick="scrollCarousel('whey-carousel', -1)">&laquo;</button>
         <button class="btn btn-light carousel-nav-btn position-absolute top-50 end-0 translate-middle-y" onclick="scrollCarousel('whey-carousel', 1)">&raquo;</button>
       </div>
-      <a href="{% url 'supplementapp:product' %}?category=whey" class="btn btn-secondary mt-3 d-block text-center">{% trans "مشاهده‌ی تمامی محصولات پروتئین وی" %}</a>
+      <a href="{% url 'product' %}?category=whey" class="btn btn-secondary mt-3 d-block text-center">{% trans "مشاهده‌ی تمامی محصولات پروتئین وی" %}</a>
     </div>
 
     <!-- ردیف 2: گینرها -->
@@ -154,7 +154,7 @@
                 <h5 class="card-title">{{ product.name }}</h5>
                 <p class="card-text">{{ product.description }}</p>
                 <p class="card-text text-success">{{ product.price }} تومان</p>
-                <a href="{% url 'supplementapp:product_detail' pk=product.id %}" class="btn btn-custom">{% trans "خرید" %}</a>
+                <a href="{% url 'product_detail' pk=product.id %}" class="btn btn-custom">{% trans "خرید" %}</a>
               </div>
             </div>
           </div>
@@ -163,7 +163,7 @@
         <button class="btn btn-light carousel-nav-btn position-absolute top-50 start-0 translate-middle-y" onclick="scrollCarousel('mass-carousel', -1)">&laquo;</button>
         <button class="btn btn-light carousel-nav-btn position-absolute top-50 end-0 translate-middle-y" onclick="scrollCarousel('mass-carousel', 1)">&raquo;</button>
       </div>
-      <a href="{% url 'supplementapp:product' %}?category=mass_gainer" class="btn btn-secondary mt-3 d-block text-center">{% trans "مشاهده‌ی تمامی محصولات گینر" %}</a>
+      <a href="{% url 'product' %}?category=mass_gainer" class="btn btn-secondary mt-3 d-block text-center">{% trans "مشاهده‌ی تمامی محصولات گینر" %}</a>
     </div>
 
     <!-- ردیف 3: کازعین -->
@@ -179,7 +179,7 @@
                 <h5 class="card-title">{{ product.name }}</h5>
                 <p class="card-text">{{ product.description }}</p>
                 <p class="card-text text-success">{{ product.price }} تومان</p>
-                <a href="{% url 'supplementapp:product_detail' pk=product.id %}" class="btn btn-custom">{% trans "خرید" %}</a>
+                <a href="{% url 'product_detail' pk=product.id %}" class="btn btn-custom">{% trans "خرید" %}</a>
               </div>
             </div>
           </div>
@@ -188,7 +188,7 @@
         <button class="btn btn-light carousel-nav-btn position-absolute top-50 start-0 translate-middle-y" onclick="scrollCarousel('casein-carousel', -1)">&laquo;</button>
         <button class="btn btn-light carousel-nav-btn position-absolute top-50 end-0 translate-middle-y" onclick="scrollCarousel('casein-carousel', 1)">&raquo;</button>
       </div>
-      <a href="{% url 'supplementapp:product' %}?category=casein" class="btn btn-secondary mt-3 d-block text-center">{% trans "مشاهده‌ی تمامی محصولات کازعین" %}</a>
+      <a href="{% url 'product' %}?category=casein" class="btn btn-secondary mt-3 d-block text-center">{% trans "مشاهده‌ی تمامی محصولات کازعین" %}</a>
     </div>
 
     <!-- ردیف 4: ایزوله -->
@@ -204,7 +204,7 @@
                 <h5 class="card-title">{{ product.name }}</h5>
                 <p class="card-text">{{ product.description }}</p>
                 <p class="card-text text-success">{{ product.price }} تومان</p>
-                <a href="{% url 'supplementapp:product_detail' pk=product.id %}" class="btn btn-custom">{% trans "خرید" %}</a>
+                <a href="{% url 'product_detail' pk=product.id %}" class="btn btn-custom">{% trans "خرید" %}</a>
               </div>
             </div>
           </div>
@@ -213,7 +213,7 @@
         <button class="btn btn-light carousel-nav-btn position-absolute top-50 start-0 translate-middle-y" onclick="scrollCarousel('isolate-carousel', -1)">&laquo;</button>
         <button class="btn btn-light carousel-nav-btn position-absolute top-50 end-0 translate-middle-y" onclick="scrollCarousel('isolate-carousel', 1)">&raquo;</button>
       </div>
-      <a href="{% url 'supplementapp:product' %}?category=isolate" class="btn btn-secondary mt-3 d-block text-center">{% trans "مشاهده‌ی تمامی محصولات ایزوله" %}</a>
+      <a href="{% url 'product' %}?category=isolate" class="btn btn-secondary mt-3 d-block text-center">{% trans "مشاهده‌ی تمامی محصولات ایزوله" %}</a>
     </div>
   </div>
 </section>
