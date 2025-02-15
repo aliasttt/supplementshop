@@ -3,25 +3,30 @@
 {% block title %}ثبت‌نام{% endblock title %}
 
 {% block head %}
-
 <style>
     body {
         background-color: gray;
     }
-    .card{
-        margin-top:50px;
+    .card {
+        margin-top: 50px;
+        opacity: 0; /* ابتدا مخفی */
+        transform: translateY(-20px); /* حرکت به بالا */
+        transition: opacity 1s ease-out, transform 1s ease-out; /* انیمیشن */
+    }
+    .card.show {
+        opacity: 1;
+        transform: translateY(0);
     }
 </style>
 
 <!-- اضافه کردن لینک به Bootstrap Icons -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-
 {% endblock head %}
 
 {% block content %}
 
 <div class="container d-flex justify-content-center align-items-center mt-5 mb-5" style="min-height: 80vh;">
-    <div class="card bg-dark text-white p-4  shadow-lg " style="width: 100%; max-width: 400px;">
+    <div class="card bg-dark text-white p-4 shadow-lg" id="register-card" style="width: 100%; max-width: 400px;">
         <h3 class="text-center fw-bold mb-4">ثبت‌نام حساب کاربری</h3>
         <form method="post" action="{% url 'register' %}">
             {% csrf_token %}
@@ -39,7 +44,7 @@
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">ایمیل</label>
-                <input type="email" class="form-control bg-secondary text-white border-0" id="email" name="email"  placeholder="ایمیل خود را وارد کنید">
+                <input type="email" class="form-control bg-secondary text-white border-0" id="email" name="email" placeholder="ایمیل خود را وارد کنید">
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">رمز عبور</label>
@@ -59,27 +64,6 @@
     </div>
 </div>
 
-
-
-
-{% if form.errors %}
-    <ul>
-        {% for field in form %}
-            {% if field.errors %}
-                <li>
-                    <strong>{{ field.label }}:</strong>
-                    {% for error in field.errors %}
-                        {{ error }}
-                    {% endfor %}
-                </li>
-            {% endif %}
-        {% endfor %}
-    </ul>
-{% endif %}
-
-
-
-
 <script>
     // تغییر وضعیت نمایش رمز عبور
     document.getElementById('togglePassword').addEventListener('click', function () {
@@ -92,10 +76,11 @@
         icon.classList.toggle('bi-eye');
         icon.classList.toggle('bi-eye-slash');
     });
+
+    // نمایش فرم با انیمیشن هنگام لود شدن صفحه
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("register-card").classList.add("show");
+    });
 </script>
 
 {% endblock content %}
-
-
-
-
