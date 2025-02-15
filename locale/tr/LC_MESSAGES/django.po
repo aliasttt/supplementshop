@@ -1,55 +1,359 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
-msgid ""
-msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-26 11:46+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-#: .\supplementapp\templates\home\home.html:64
+msgid "خانه"
+msgstr "Ana Sayfa"
+
 msgid "به فروشگاه ما خوش آمدید"
-msgstr ""
+msgstr "Mağazamıza Hoşgeldiniz"
 
-#: .\supplementapp\templates\home\home.html:65
 msgid "مقصد نهایی شما برای خرید مکمل‌های باکیفیت!"
-msgstr ""
+msgstr "Kaliteli Takviyeleri Satın Alabileceğiniz Nihai Nokta!"
 
-#: .\supplementapp\templates\home\home.html:66
 msgid "هم‌اکنون خرید کنید"
-msgstr ""
+msgstr "Hemen Alışveriş Yapın"
 
-#: .\supplementapp\templates\home\home.html:73
 msgid "محصولات ما"
-msgstr ""
+msgstr "Ürünlerimiz"
 
-#: .\supplementapp\templates\home\home.html:77
 msgid "پروتئین وی"
-msgstr ""
+msgstr "Whey Protein"
 
-#: .\supplementapp\templates\home\home.html:88
-#: .\supplementapp\templates\home\home.html:113
 msgid "خرید"
-msgstr ""
+msgstr "Satın Al"
 
-#: .\supplementapp\templates\home\home.html:97
 msgid "مشاهده‌ی تمامی محصولات پروتئین وی"
-msgstr ""
+msgstr "Tüm Whey Protein Ürünlerini Görüntüle"
 
-#: .\supplementapp\templates\home\home.html:102
 msgid "گینرها"
-msgstr ""
+msgstr "Gainers"
 
-#: .\supplementapp\templates\home\home.html:122
 msgid "مشاهده‌ی تمامی محصولات گینر"
-msgstr ""
+msgstr "Tüm Gainer Ürünlerini Görüntüle"
+
+msgid "کازعین"
+msgstr "Casein"
+
+msgid "مشاهده‌ی تمامی محصولات کازعین"
+msgstr "Tüm Casein Ürünlerini Görüntüle"
+
+msgid "ایزوله"
+msgstr "Isolate"
+
+msgid "مشاهده‌ی تمامی محصولات ایزوله"
+msgstr "Tüm Isolate Ürünlerini Görüntüle"
+
+msgid "درباره ما"
+msgstr "Hakkımızda"
+
+msgid "فروشگاه ساپلمنت شاپ، ارائه‌دهنده بهترین و باکیفیت‌ترین مکمل‌های ورزشی و تغذیه‌ای. هدف ما کمک به شما برای دستیابی به اهداف سلامتی و تناسب اندام است."
+msgstr "Supplement Shop, en iyi ve yüksek kaliteli spor ve beslenme takviyelerini sunmaktadır. Amacımız, sağlık ve fitness hedeflerinize ulaşmanıza yardımcı olmaktır."
+
+msgid "چرا ما را انتخاب کنید؟"
+msgstr "Neden Bizi Seçmelisiniz?"
+
+msgid "ما به کیفیت محصولات خود متعهد هستیم و تمامی مکمل‌ها با ضمانت اصالت ارائه می‌شوند. تیم ما متشکل از متخصصان تغذیه و ورزش است که همواره آماده پاسخگویی به سوالات شما هستند."
+msgstr "Ürünlerimizin kalitesine bağlıyız ve tüm takviyeler, orijinallik garantisi ile sunulmaktadır. Ekibimiz, her zaman sorularınızı yanıtlamaya hazır olan beslenme ve fitness uzmanlarından oluşmaktadır."
+
+msgid "کیفیت بالا"
+msgstr "Yüksek Kalite"
+
+msgid "خدمات ما"
+msgstr "Hizmetlerimiz"
+
+msgid "ارائه مشاوره تخصصی، ارسال سریع به سراسر کشور، و تخفیفات ویژه برای مشتریان وفادار از جمله خدمات ما هستند."
+msgstr "Özel danışmanlık, hızlı teslimat ve sadık müşteriler için özel indirimler gibi hizmetler sunuyoruz."
+
+msgid "خدمات ویژه"
+msgstr "Özel Hizmetler"
+
+msgid "سبد خرید"
+msgstr "Alışveriş Sepeti"
+
+msgid "محصول"
+msgstr "Ürün"
+
+msgid "تعداد"
+msgstr "Miktar"
+
+msgid "قیمت واحد"
+msgstr "Birim Fiyatı"
+
+msgid "مجموع"
+msgstr "Toplam"
+
+msgid "حذف"
+msgstr "Kaldır"
+
+msgid "مجموع قیمت:"
+msgstr "Toplam Fiyat:"
+
+msgid "ادامه خرید"
+msgstr "Alışverişe Devam Et"
+
+msgid "پرداخت"
+msgstr "Ödeme"
+
+msgid "سبد خرید شما خالی است."
+msgstr "Sepetiniz Boş"
+
+msgid "خطا در حذف محصول!"
+msgstr "Ürün Silme Hatası!"
+
+msgid "خطا در بروزرسانی تعداد!"
+msgstr "Miktar Güncelleme Hatası!"
+
+msgid "اطلاعات پرداخت"
+msgstr "Ödeme Bilgileri"
+
+msgid "لطفاً جزئیات خود را وارد کنید تا خرید خود را تکمیل نمایید."
+msgstr "Satın alımınızı tamamlamak için lütfen bilgilerinizi girin."
+
+msgid "نام و نام خانوادگی"
+msgstr "Ad ve Soyad"
+
+msgid "نام و نام خانوادگی خود را وارد کنید"
+msgstr "Ad ve soyadınızı girin"
+
+msgid "ایمیل"
+msgstr "E-posta"
+
+msgid "ایمیل خود را وارد کنید"
+msgstr "E-posta adresinizi girin"
+
+msgid "آدرس"
+msgstr "Adres"
+
+msgid "آدرس خود را وارد کنید"
+msgstr "Adresinizi girin"
+
+msgid "شماره تماس"
+msgstr "Telefon Numarası"
+
+msgid "شماره تماس خود را وارد کنید"
+msgstr "Telefon numaranızı girin"
+
+msgid "کد پستی"
+msgstr "Posta Kodu"
+
+msgid "کد پستی خود را وارد کنید"
+msgstr "Posta kodunuzu girin"
+
+msgid "خلاصه سفارش"
+msgstr "Sipariş Özeti"
+
+msgid "جمع مبلغ"
+msgstr "Toplam Tutar"
+
+msgid "هزینه ارسال"
+msgstr "Kargo Ücreti"
+
+msgid "مجموع کل"
+msgstr "Genel Toplam"
+
+msgid "من شرایط و قوانین را می‌پذیرم"
+msgstr "Şartlar ve koşulları kabul ediyorum"
+
+msgid "پرداخت"
+msgstr "Ödeme Yap"
+
+msgid "لطفاً شرایط و قوانین را بپذیرید."
+msgstr "Lütfen şartlar ve koşulları kabul edin."
+
+msgid "ارتباط با ما"
+msgstr "Bize Ulaşın"
+
+msgid "برای تماس با ما فرم زیر را پر کنید"
+msgstr "Bize ulaşmak için aşağıdaki formu doldurun"
+
+msgid "پیام شما با موفقیت ارسال شد!"
+msgstr "Mesajınız başarıyla gönderildi!"
+
+msgid "مشکلی در ارسال پیام پیش آمد. لطفاً دوباره تلاش کنید."
+msgstr "Mesaj gönderirken bir sorun oluştu. Lütfen tekrar deneyin."
+
+msgid "نام کامل"
+msgstr "Ad Soyad"
+
+msgid "نام شما"
+msgstr "Adınız"
+
+msgid "ایمیل"
+msgstr "E-posta"
+
+msgid "ایمیل شما"
+msgstr "E-posta adresiniz"
+
+msgid "شماره تماس"
+msgstr "Telefon Numarası"
+
+msgid "شماره تماس شما"
+msgstr "Telefon numaranız"
+
+msgid "موضوع"
+msgstr "Konu"
+
+msgid "موضوع پیام"
+msgstr "Mesaj Konusu"
+
+msgid "پیام شما"
+msgstr "Mesajınız"
+
+msgid "پیام خود را بنویسید"
+msgstr "Mesajınızı yazın"
+
+msgid "ارسال پیام"
+msgstr "Mesaj Gönder"
+
+msgid "ورود"
+msgstr "Giriş"
+
+msgid "ورود به حساب کاربری"
+msgstr "Hesabınıza Giriş Yapın"
+
+msgid "شماره تلفن"
+msgstr "Telefon Numarası"
+
+msgid "رمز عبور"
+msgstr "Parola"
+
+msgid "رمز عبور خود را فراموش کرده‌اید؟"
+msgstr "Parolanızı mı unuttunuz?"
+
+msgid "ورود"
+msgstr "Giriş Yap"
+
+msgid "حساب کاربری ندارید؟"
+msgstr "Hesabınız yok mu?"
+
+msgid "ثبت‌نام"
+msgstr "Kayıt Ol"
+
+msgid "سفارشات"
+msgstr "Siparişler"
+
+msgid "سفارشات من"
+msgstr "Siparişlerim"
+
+msgid "شماره سفارش"
+msgstr "Sipariş Numarası"
+
+msgid "تاریخ سفارش"
+msgstr "Sipariş Tarihi"
+
+msgid "وضعیت"
+msgstr "Durum"
+
+msgid "مجموع پرداختی"
+msgstr "Toplam Ödenen"
+
+msgid "عدد"
+msgstr "Ürün"
+
+msgid "هیچ سفارشی ثبت نشده است."
+msgstr "Hiçbir sipariş verilmedi."
+
+msgid "Supplement Shop | فروشگاه آنلاین مکمل‌های تخصصی"
+msgstr "Supplement Shop | Uzman Takviye Online Mağazası"
+
+msgid "ما اینجا هستیم تا با ارائه مکمل‌های اصل و معتبر، راه سلامتی و تناسب اندام را برای شما هموار کنیم. هدف ما، همراهی با شما در مسیر رسیدن به بهترین نسخه از خودتان است."
+msgstr "Biz, size sağlıklı yaşam ve fitness yolunda yardımcı olmak için orijinal ve güvenilir takviyeler sağlamak amacıyla buradayız. Amacımız, en iyi versiyonunuza ulaşma yolculuğunuzda size rehberlik etmektir."
+
+msgid "تماس"
+msgstr "İletişim"
+
+msgid "ایمیل"
+msgstr "E-posta"
+
+msgid "Supplement Shop. همه حقوق محفوظ است."
+msgstr "Supplement Shop. Tüm hakları saklıdır."
+
+msgid "فروشگاه مکمل"
+msgstr "Takviye Mağazası"
+
+msgid "خانه"
+msgstr "Ana Sayfa"
+
+msgid "محصولات"
+msgstr "Ürünler"
+
+msgid "درباره ما"
+msgstr "Hakkımızda"
+
+msgid "ارتباط با ما"
+msgstr "İletişim"
+
+msgid "مشاهده پروفایل"
+msgstr "Profili Görüntüle"
+
+msgid "سفارشات"
+msgstr "Siparişler"
+
+msgid "خروج"
+msgstr "Çıkış"
+
+msgid "ورود"
+msgstr "Giriş Yap"
+
+msgid "ثبت نام"
+msgstr "Kayıt Ol"
+
+msgid "تغییر رمز عبور موفق"
+msgstr "Parola Değişikliği Başarılı"
+
+msgid "رمز عبور شما با موفقیت تغییر کرد. حالا می‌توانید وارد حساب کاربری خود شوید."
+msgstr "Parolanız başarıyla değiştirildi. Şimdi hesabınıza giriş yapabilirsiniz."
+
+msgid "ورود"
+msgstr "Giriş Yap"
+
+msgid "تغییر رمز عبور"
+msgstr "Parola Değiştir"
+
+msgid "ایمیل ارسال شد"
+msgstr "E-posta Gönderildi"
+
+msgid "اگر ایمیل شما در سیستم ثبت شده باشد، یک پیام شامل لینک بازنشانی رمز عبور به آن ارسال شده است."
+msgstr "E-posta adresiniz sistemde kayıtlıysa, parola sıfırlama bağlantısı içeren bir mesaj gönderildi."
+
+msgid "ورود به حساب"
+msgstr "Hesaba Giriş Yap"
+
+msgid "بازنشانی رمز عبور"
+msgstr "Parola Sıfırlama"
+
+msgid "لطفاً ایمیل خود را وارد کنید تا لینک بازنشانی رمز عبور برای شما ارسال شود."
+msgstr "Parola sıfırlama bağlantısı göndermek için lütfen e-posta adresinizi girin."
+
+msgid "ارسال ایمیل"
+msgstr "E-posta Gönder"
+
+msgid "بازگشت به صفحه ورود"
+msgstr "Giriş Sayfasına Geri Dön"
+
+msgid "صفحه محصولات"
+msgstr "Ürün Sayfası"
+
+msgid "محصولات مکمل"
+msgstr "Takviye Ürünleri"
+
+msgid "پروتئین وی"
+msgstr "Whey Protein"
+
+msgid "گینر"
+msgstr "Gainer"
+
+msgid "کازعین"
+msgstr "Casein"
+
+msgid "ایزوله"
+msgstr "Isolate"
+
+msgid "فروشگاه آنلاین مکمل"
+msgstr "Online Takviye Mağazası"
+
+msgid "پشتیبانی از مشتریان"
+msgstr "Müşteri Destek"
+
+msgid "تماس با پشتیبانی"
+msgstr "Destekle İletişime Geç"
+
+msgid "شما می‌توانید از طریق تماس با تیم پشتیبانی ما از خدمات ویژه و مشاوره‌ استفاده کنید."
+msgstr "Destek ekibimize ulaşarak özel hizmetlerden ve danışmanlıktan faydalanabilirsiniz."

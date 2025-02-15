@@ -26,17 +26,17 @@
 
 {% block content %}
 <div class="container sabad">
-    <h2 class="text-center mb-4">سبد خرید</h2>
+    <h2 class="text-center mb-4">{% trans "سبد خرید" %}</h2>
     
     {% if basket_items %}
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>محصول</th>
-                    <th>تعداد</th>
-                    <th>قیمت واحد</th>
-                    <th>مجموع</th>
-                    <th>حذف</th>
+                    <th>{% trans "محصول" %}</th>
+                    <th>{% trans "تعداد" %}</th>
+                    <th>{% trans "قیمت واحد" %}</th>
+                    <th>{% trans "مجموع" %}</th>
+                    <th>{% trans "حذف" %}</th>
                 </tr>
             </thead>
             <tbody>
@@ -63,16 +63,16 @@
             </tbody>
         </table>
         <div class="d-flex justify-content-between">
-            <h4 id="total-price">مجموع قیمت: {{ total_price }} تومان</h4>
-            <a href="{% url 'product' %}" class="btn btn-success">ادامه خرید</a>
+            <h4 id="total-price">{% trans "مجموع قیمت:" %} {{ total_price }} تومان</h4>
+            <a href="{% url 'product' %}" class="btn btn-success">{% trans "ادامه خرید" %}</a>
             {% if user.is_authenticated %}
-                <a href="{% url 'checkout' %}" class="btn btn-primary">پرداخت</a>
+                <a href="{% url 'checkout' %}" class="btn btn-primary">{% trans "پرداخت" %}</a>
             {% else %}
-                <a href="{% url 'login' %}?next={% url 'checkout' %}" class="btn btn-primary">پرداخت</a>
+                <a href="{% url 'login' %}?next={% url 'checkout' %}" class="btn btn-primary">{% trans "پرداخت" %}</a>
             {% endif %}
         </div>
     {% else %}
-        <p class="text-center">سبد خرید شما خالی است.</p>
+        <p class="text-center">{% trans "سبد خرید شما خالی است." %}</p>
     {% endif %}
 </div>
 
@@ -109,7 +109,7 @@
                     }
                 },
                 error: function(xhr) {
-                    alert('خطا در حذف محصول!');
+                    alert('{% trans "خطا در حذف محصول!" %}');
                 }
             });
         }
@@ -132,7 +132,7 @@
                     }
                 },
                 error: function(xhr) {
-                    alert('خطا در بروزرسانی تعداد!');
+                    alert('{% trans "خطا در بروزرسانی تعداد!" %}');
                 }
             });
         }
@@ -142,7 +142,7 @@
             $('.total-price').each(function() {
                 total += parseInt($(this).text().replace(' تومان', ''));
             });
-            $('#total-price').text('مجموع قیمت: ' + total + ' تومان');
+            $('#total-price').text('{% trans "مجموع قیمت:" %} ' + total + ' تومان');
         }
     });
 </script>

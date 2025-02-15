@@ -88,7 +88,7 @@
 </style>
 {% endblock head %}
 
-{% block title %}ارتباط با ما{% endblock title %}
+{% block title %}{% trans "ارتباط با ما" %}{% endblock title %}
 
 {% block content %}
 <div class="container py-5">
@@ -96,18 +96,18 @@
         <div class="col-lg-6">
             <div class="contact-form">
                 <div class="contact-header">
-                    <h1>ارتباط با ما</h1>
-                    <p style="color:purple;">برای تماس با ما فرم زیر را پر کنید</p>
+                    <h1>{% trans "ارتباط با ما" %}</h1>
+                    <p style="color:purple;">{% trans "برای تماس با ما فرم زیر را پر کنید" %}</p>
                 </div>
 
                 {% if status %}
                     {% if status == 'success' %}
                         <div class="alert alert-success">
-                            پیام شما با موفقیت ارسال شد!
+                            {% trans "پیام شما با موفقیت ارسال شد!" %}
                         </div>
                     {% else %}
                         <div class="alert alert-danger">
-                            مشکلی در ارسال پیام پیش آمد. لطفاً دوباره تلاش کنید.
+                            {% trans "مشکلی در ارسال پیام پیش آمد. لطفاً دوباره تلاش کنید." %}
                         </div>
                     {% endif %}
                 {% endif %}
@@ -115,26 +115,26 @@
                 <form method="POST">
                     {% csrf_token %}
                     <div class="mb-3">
-                        <label for="name" class="form-label">نام کامل</label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="نام شما">
+                        <label for="name" class="form-label">{% trans "نام کامل" %}</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="{% trans "نام شما" %}">
                     </div>
                     <div class="mb-3">
-                        <label for="email" class="form-label">ایمیل</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="ایمیل شما">
+                        <label for="email" class="form-label">{% trans "ایمیل" %}</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="{% trans "ایمیل شما" %}">
                     </div>
                     <div class="mb-3">
-                        <label for="phone" class="form-label">شماره تماس</label>
-                        <input type="text" class="form-control" id="phone" name="phone" placeholder="شماره تماس شما">
+                        <label for="phone" class="form-label">{% trans "شماره تماس" %}</label>
+                        <input type="text" class="form-control" id="phone" name="phone" placeholder="{% trans "شماره تماس شما" %}">
                     </div>
                     <div class="mb-3">
-                        <label for="subject" class="form-label">موضوع</label>
-                        <input type="text" class="form-control" id="subject" name="subject" placeholder="موضوع پیام">
+                        <label for="subject" class="form-label">{% trans "موضوع" %}</label>
+                        <input type="text" class="form-control" id="subject" name="subject" placeholder="{% trans "موضوع پیام" %}">
                     </div>
                     <div class="mb-3">
-                        <label for="text" class="form-label">پیام شما</label>
-                        <textarea class="form-control" id="text" name="text" rows="4" placeholder="پیام خود را بنویسید"></textarea>
+                        <label for="text" class="form-label">{% trans "پیام شما" %}</label>
+                        <textarea class="form-control" id="text" name="text" rows="4" placeholder="{% trans "پیام خود را بنویسید" %}"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary w-100">ارسال پیام</button>
+                    <button type="submit" class="btn btn-primary w-100">{% trans "ارسال پیام" %}</button>
                 </form>
 
                 <div class="text-center mt-4 social-icons">

@@ -76,7 +76,7 @@
 </style>
 {% endblock head %}
 
-{% block title %}جزئیات محصول{% endblock title %}
+{% block title %}{% trans "جزئیات محصول" %}{% endblock title %}
 
 {% block content %}
 <div class="container py-5">
@@ -84,22 +84,20 @@
         <div class="col-md-8">
             <div class="product-detail text-center">
                 <img src="{{ product.image.url }}" alt="{{ product.name }}">
-                <h1>{{ product.name }}</h1>
-                <p class="price">{{ product.price }} تومان</p>
-                <p class="description">{{ product.description }}</p>
+                <h1>{% trans product.name %}</h1>
+                <p class="price">{% trans product.price %} تومان</p>
+                <p class="description">{% trans product.description %}</p>
 
                 <!-- فرم اضافه به سبد خرید -->
                 <form method="post" action="{% url 'add-to-basket' pk=product.id %}" id="add-to-cart-form">
                     {% csrf_token %}
-                    <button onclick="addToBasket(event, {{ product.id }})" class="btn-add-to-cart mb-4">اضافه به سبد خرید</button>
+                    <button onclick="addToBasket(event, {{ product.id }})" class="btn-add-to-cart mb-4">{% trans "اضافه به سبد خرید" %}</button>
                 </form>
 
-                <a href="{% url 'product' %}" class="btn-back mt-5">بازگشت به لیست محصولات</a>
+                <a href="{% url 'product' %}" class="btn-back mt-5">{% trans "بازگشت به لیست محصولات" %}</a>
             </div>
         </div>
     </div>
-
-    
 </div>
 
 <script>

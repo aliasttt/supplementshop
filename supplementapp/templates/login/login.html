@@ -1,6 +1,6 @@
 {% extends 'partitions/base.html' %}
 
-{% block title %}ورود{% endblock title %}
+{% block title %}{% trans "ورود" %}{% endblock title %}
 
 {% block head %}
 <style>
@@ -42,25 +42,25 @@
 
 <div class="container d-flex justify-content-center align-items-center mt-5" style="min-height: 80vh;">
     <div class="card bg-dark text-white p-4 shadow-lg fade-in" style="width: 100%; max-width: 400px;">
-        <h3 class="text-center fw-bold mb-4">ورود به حساب کاربری</h3>
+        <h3 class="text-center fw-bold mb-4">{% trans "ورود به حساب کاربری" %}</h3>
         <form method="post" action="{% url 'login' %}">
             {% csrf_token %}
             <div class="mb-3">
-                <label for="phone" class="form-label">شماره تلفن</label>
+                <label for="phone" class="form-label">{% trans "شماره تلفن" %}</label>
                 <input type="text" class="form-control bg-secondary text-white border-0" id="phone" name="phone" required>
             </div>
             <div class="mb-3">
-                <label for="password" class="form-label">رمز عبور</label>
+                <label for="password" class="form-label">{% trans "رمز عبور" %}</label>
                 <input type="password" class="form-control bg-secondary text-white border-0" id="password" name="password" required>
             </div>
             <div class="d-flex justify-content-end align-items-center mb-3">
-                <a href="{% url 'password_reset' %}" class="text-danger">رمز عبور خود را فراموش کرده‌اید؟</a>
+                <a href="{% url 'password_reset' %}" class="text-danger">{% trans "رمز عبور خود را فراموش کرده‌اید؟" %}</a>
             </div>
-            <button type="submit" class="btn btn-danger w-100">ورود</button>
+            <button type="submit" class="btn btn-danger w-100">{% trans "ورود" %}</button>
         </form>
         <p class="text-center mt-3">
-            حساب کاربری ندارید؟
-            <a href="{% url 'register' %}" class="text-danger fw-bold">ثبت‌نام</a>
+            {% trans "حساب کاربری ندارید؟" %}
+            <a href="{% url 'register' %}" class="text-danger fw-bold">{% trans "ثبت‌نام" %}</a>
         </p>
     </div>
 </div>
