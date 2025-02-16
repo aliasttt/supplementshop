@@ -1,5 +1,6 @@
-msgid "خانه"
-msgstr "Ana Sayfa"
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
 
 msgid "به فروشگاه ما خوش آمدید"
 msgstr "Mağazamıza Hoşgeldiniz"
@@ -34,14 +35,11 @@ msgstr "Casein"
 msgid "مشاهده‌ی تمامی محصولات کازعین"
 msgstr "Tüm Casein Ürünlerini Görüntüle"
 
-msgid "ایزوله"
-msgstr "Isolate"
+
 
 msgid "مشاهده‌ی تمامی محصولات ایزوله"
 msgstr "Tüm Isolate Ürünlerini Görüntüle"
 
-msgid "درباره ما"
-msgstr "Hakkımızda"
 
 msgid "فروشگاه ساپلمنت شاپ، ارائه‌دهنده بهترین و باکیفیت‌ترین مکمل‌های ورزشی و تغذیه‌ای. هدف ما کمک به شما برای دستیابی به اهداف سلامتی و تناسب اندام است."
 msgstr "Supplement Shop, en iyi ve yüksek kaliteli spor ve beslenme takviyelerini sunmaktadır. Amacımız, sağlık ve fitness hedeflerinize ulaşmanıza yardımcı olmaktır."
@@ -112,8 +110,7 @@ msgstr "Ad ve Soyad"
 msgid "نام و نام خانوادگی خود را وارد کنید"
 msgstr "Ad ve soyadınızı girin"
 
-msgid "ایمیل"
-msgstr "E-posta"
+
 
 msgid "ایمیل خود را وارد کنید"
 msgstr "E-posta adresinizi girin"
@@ -124,8 +121,7 @@ msgstr "Adres"
 msgid "آدرس خود را وارد کنید"
 msgstr "Adresinizi girin"
 
-msgid "شماره تماس"
-msgstr "Telefon Numarası"
+
 
 msgid "شماره تماس خود را وارد کنید"
 msgstr "Telefon numaranızı girin"
@@ -151,14 +147,11 @@ msgstr "Genel Toplam"
 msgid "من شرایط و قوانین را می‌پذیرم"
 msgstr "Şartlar ve koşulları kabul ediyorum"
 
-msgid "پرداخت"
-msgstr "Ödeme Yap"
+
 
 msgid "لطفاً شرایط و قوانین را بپذیرید."
 msgstr "Lütfen şartlar ve koşulları kabul edin."
 
-msgid "ارتباط با ما"
-msgstr "Bize Ulaşın"
 
 msgid "برای تماس با ما فرم زیر را پر کنید"
 msgstr "Bize ulaşmak için aşağıdaki formu doldurun"
@@ -175,8 +168,7 @@ msgstr "Ad Soyad"
 msgid "نام شما"
 msgstr "Adınız"
 
-msgid "ایمیل"
-msgstr "E-posta"
+
 
 msgid "ایمیل شما"
 msgstr "E-posta adresiniz"
@@ -202,8 +194,7 @@ msgstr "Mesajınızı yazın"
 msgid "ارسال پیام"
 msgstr "Mesaj Gönder"
 
-msgid "ورود"
-msgstr "Giriş"
+
 
 msgid "ورود به حساب کاربری"
 msgstr "Hesabınıza Giriş Yapın"
@@ -217,8 +208,7 @@ msgstr "Parola"
 msgid "رمز عبور خود را فراموش کرده‌اید؟"
 msgstr "Parolanızı mı unuttunuz?"
 
-msgid "ورود"
-msgstr "Giriş Yap"
+
 
 msgid "حساب کاربری ندارید؟"
 msgstr "Hesabınız yok mu?"
@@ -226,8 +216,6 @@ msgstr "Hesabınız yok mu?"
 msgid "ثبت‌نام"
 msgstr "Kayıt Ol"
 
-msgid "سفارشات"
-msgstr "Siparişler"
 
 msgid "سفارشات من"
 msgstr "Siparişlerim"
@@ -289,8 +277,6 @@ msgstr "Siparişler"
 msgid "خروج"
 msgstr "Çıkış"
 
-msgid "ورود"
-msgstr "Giriş Yap"
 
 msgid "ثبت نام"
 msgstr "Kayıt Ol"
@@ -334,14 +320,11 @@ msgstr "Ürün Sayfası"
 msgid "محصولات مکمل"
 msgstr "Takviye Ürünleri"
 
-msgid "پروتئین وی"
-msgstr "Whey Protein"
 
 msgid "گینر"
 msgstr "Gainer"
 
-msgid "کازعین"
-msgstr "Casein"
+
 
 msgid "ایزوله"
 msgstr "Isolate"
@@ -352,8 +335,16 @@ msgstr "Online Takviye Mağazası"
 msgid "پشتیبانی از مشتریان"
 msgstr "Müşteri Destek"
 
+
+msgid "زبان"
+msgstr "dil"
+
 msgid "تماس با پشتیبانی"
 msgstr "Destekle İletişime Geç"
 
 msgid "شما می‌توانید از طریق تماس با تیم پشتیبانی ما از خدمات ویژه و مشاوره‌ استفاده کنید."
 msgstr "Destek ekibimize ulaşarak özel hizmetlerden ve danışmanlıktan faydalanabilirsiniz."
+
+
+msgid " تومان"
+msgstr "toman "

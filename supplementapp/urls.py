@@ -31,6 +31,7 @@ urlpatterns = [
     path('payment_success', views.Payment_success, name='payment_success'),
     path('orders/', orders, name='orders'),
     path('profile/', profile, name='profile'),
+    path('i18n/', include('django.conf.urls.i18n')),  # اضافه کردن مسیر تغییر زبان
     path(
         'password-reset/',
         auth_views.PasswordResetView.as_view(
@@ -54,15 +55,18 @@ urlpatterns = [
         ),
         name='password_reset_confirm'
     ),
+
+
     path(
         'password-reset-complete/',
         auth_views.PasswordResetCompleteView.as_view(
             template_name='password/password_reset_complete.html'
         ),
         name='password_reset_complete'
-    ),
-    # اگر این یو ار ال ها برای ریست کردن پسورد کار نکرد مشکل ازینه که نباید نیم اسپیس داشته باشیم اونو پاک کنی حل میشه
+
+        ),   # اگر این یو ار ال ها برای ریست کردن پسورد کار نکرد مشکل ازینه که نباید نیم اسپیس داشته باشیم اونو پاک کنی حل میشه
 ]
+
 
 
 

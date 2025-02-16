@@ -1,3 +1,11 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "تومان"
+msgstr "toman"
+
+
 msgid "خانه"
 msgstr "Home"
 
@@ -42,9 +50,6 @@ msgstr "View all Isolate products"
 
 
 
-msgid "درباره ما"
-msgstr "About Us"
-
 msgid "فروشگاه ساپلمنت شاپ، ارائه‌دهنده بهترین و باکیفیت‌ترین مکمل‌های ورزشی و تغذیه‌ای. هدف ما کمک به شما برای دستیابی به اهداف سلامتی و تناسب اندام است."
 msgstr "Supplement Shop, providing the best and highest quality sports and nutritional supplements. Our goal is to help you achieve your health and fitness goals."
 
@@ -65,7 +70,6 @@ msgstr "We offer specialized consultations, fast delivery nationwide, and specia
 
 msgid "خدمات ویژه"
 msgstr "Special Services"
-
 
 msgid "سبد خرید"
 msgstr "Shopping Cart"
@@ -91,8 +95,8 @@ msgstr "Total Price:"
 msgid "ادامه خرید"
 msgstr "Continue Shopping"
 
-msgid "پرداخت"
-msgstr "Checkout"
+
+
 
 msgid "سبد خرید شما خالی است."
 msgstr "Your cart is empty."
@@ -127,8 +131,6 @@ msgstr "Address"
 msgid "آدرس خود را وارد کنید"
 msgstr "Enter your address"
 
-msgid "شماره تماس"
-msgstr "Phone Number"
 
 msgid "شماره تماس خود را وارد کنید"
 msgstr "Enter your phone number"
@@ -160,8 +162,6 @@ msgstr "Pay"
 msgid "لطفاً شرایط و قوانین را بپذیرید."
 msgstr "Please accept the terms and conditions."
 
-
-
 msgid "ارتباط با ما"
 msgstr "Contact Us"
 
@@ -180,8 +180,6 @@ msgstr "Full Name"
 msgid "نام شما"
 msgstr "Your Name"
 
-msgid "ایمیل"
-msgstr "Email"
 
 msgid "ایمیل شما"
 msgstr "Your Email"
@@ -207,7 +205,6 @@ msgstr "Write your message"
 msgid "ارسال پیام"
 msgstr "Send Message"
 
-
 msgid "ورود"
 msgstr "Login"
 
@@ -223,15 +220,13 @@ msgstr "Password"
 msgid "رمز عبور خود را فراموش کرده‌اید؟"
 msgstr "Forgot your password?"
 
-msgid "ورود"
-msgstr "Log in"
+
 
 msgid "حساب کاربری ندارید؟"
 msgstr "Don't have an account?"
 
 msgid "ثبت‌نام"
 msgstr "Register"
-
 
 msgid "سفارشات"
 msgstr "Orders"
@@ -257,7 +252,6 @@ msgstr "item"
 msgid "هیچ سفارشی ثبت نشده است."
 msgstr "No orders have been placed."
 
-
 msgid "Supplement Shop | فروشگاه آنلاین مکمل‌های تخصصی"
 msgstr "Supplement Shop | Specialized Supplement Online Store"
 
@@ -267,8 +261,7 @@ msgstr "We are here to provide authentic and reliable supplements, paving the wa
 msgid "تماس"
 msgstr "Contact"
 
-msgid "ایمیل"
-msgstr "Email"
+
 
 msgid "Supplement Shop. همه حقوق محفوظ است."
 msgstr "Supplement Shop. All rights reserved."
@@ -276,33 +269,19 @@ msgstr "Supplement Shop. All rights reserved."
 msgid "فروشگاه مکمل"
 msgstr "Supplement Store"
 
-msgid "خانه"
-msgstr "Home"
-
 msgid "محصولات"
 msgstr "Products"
 
 msgid "درباره ما"
 msgstr "About Us"
 
-msgid "ارتباط با ما"
-msgstr "Contact Us"
+
 
 msgid "مشاهده پروفایل"
 msgstr "View Profile"
 
-msgid "سفارشات"
-msgstr "Orders"
-
 msgid "خروج"
 msgstr "Logout"
-
-msgid "ورود"
-msgstr "Login"
-
-msgid "ثبت نام"
-msgstr "Register"
-
 
 msgid "تغییر رمز عبور موفق"
 msgstr "Password Change Successful"
@@ -310,12 +289,8 @@ msgstr "Password Change Successful"
 msgid "رمز عبور شما با موفقیت تغییر کرد. حالا می‌توانید وارد حساب کاربری خود شوید."
 msgstr "Your password has been successfully changed. You can now log in to your account."
 
-msgid "ورود"
-msgstr "Login"
-
 msgid "تغییر رمز عبور"
 msgstr "Change Password"
-
 
 msgid "ایمیل ارسال شد"
 msgstr "Email Sent"
@@ -325,7 +300,6 @@ msgstr "If your email is registered in the system, a message with a password res
 
 msgid "ورود به حساب"
 msgstr "Login to Account"
-
 
 msgid "بازنشانی رمز عبور"
 msgstr "Password Reset"
@@ -339,7 +313,6 @@ msgstr "Send Email"
 msgid "بازگشت به صفحه ورود"
 msgstr "Back to Login Page"
 
-
 msgid "صفحه محصولات"
 msgstr "Product Page"
 
@@ -352,80 +325,27 @@ msgstr "Search..."
 msgid "اعمال فیلتر"
 msgstr "Apply Filter"
 
-msgid "تومان"
-msgstr "Toman"
+msgid "زبان"
+msgstr "language"
 
 
-msgid "جزئیات محصول"
-msgstr "Product Details"
+
+msgid "ثبت نام"
+msgstr "sign up "
+
+msgid "نام"
+msgstr "name"
+
+msgid "ثبت‌نام حساب کاربری"
+msgstr "sign up your account"
+
+
+
+msgid "نام خانوادگی"
+msgstr "last name"
 
 msgid "اضافه به سبد خرید"
 msgstr "Add to Cart"
 
-msgid "بازگشت به لیست محصولات"
-msgstr "Back to Product List"
-
-
-msgid "پروفایل کاربری"
-msgstr "User Profile"
-
-msgid "شماره تلفن"
-msgstr "Phone Number"
-
-msgid "ایمیل"
-msgstr "Email"
-
-msgid "آخرین ورود"
-msgstr "Last Login"
-
-msgid "ویرایش اطلاعات"
-msgstr "Edit Information"
-
-msgid "خروج از حساب"
-msgstr "Log Out"
-
-
-msgid "ثبت‌نام"
-msgstr "Register"
-
-msgid "ثبت‌نام حساب کاربری"
-msgstr "User Account Registration"
-
-msgid "نام"
-msgstr "First Name"
-
-msgid "نام خانوادگی"
-msgstr "Last Name"
-
-msgid "شماره تلفن"
-msgstr "Phone Number"
-
-msgid "ایمیل"
-msgstr "Email"
-
-msgid "رمز عبور"
-msgstr "Password"
-
-msgid "نام خود را وارد کنید"
-msgstr "Enter your first name"
-
-msgid "نام خانوادگی خود را وارد کنید"
-msgstr "Enter your last name"
-
-msgid "شماره تلفن خود را وارد کنید"
-msgstr "Enter your phone number"
-
-msgid "ایمیل خود را وارد کنید"
-msgstr "Enter your email"
-
-msgid "رمز عبور خود را وارد کنید"
-msgstr "Enter your password"
-
-msgid "ثبت‌ نام"
-msgstr "Register"
-
-msgid "قبلاً حساب کاربری ساخته‌اید؟"
-msgstr "Already have an account?"
-
-msgid "ورود"
-msgstr "Login"
+msgid "محصولات مشابه"
+msgstr "Similar Products"
