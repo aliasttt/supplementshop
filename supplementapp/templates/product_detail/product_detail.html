@@ -85,7 +85,8 @@
             <div class="product-detail text-center">
                 <img src="{{ product.image.url }}" alt="{{ product.name }}">
                 <h1>{% trans product.name %}</h1>
-                <p class="price">{% trans product.price %} تومان</p>
+                <p class="price">{{ product.price }} {% trans "تومان" %}</p>
+
                 <p class="description">{% trans product.description %}</p>
 
                 <!-- فرم اضافه به سبد خرید -->
