@@ -336,6 +336,19 @@ msgstr "sign up "
 msgid "نام"
 msgstr "name"
 
+msgid "فارسی"
+msgstr "persian"
+
+msgid "انگلیسی"
+msgstr "english"
+
+msgid "ترکی"
+msgstr "turkish"
+
+msgid "بازگشت به لیست محصولات"
+msgstr "return to the products"
+
+
 msgid "ثبت‌نام حساب کاربری"
 msgstr "sign up your account"
 

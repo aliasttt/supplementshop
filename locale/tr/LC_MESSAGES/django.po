@@ -5,6 +5,21 @@ msgstr ""
 msgid "به فروشگاه ما خوش آمدید"
 msgstr "Mağazamıza Hoşgeldiniz"
 
+
+
+msgid "فارسی"
+msgstr "farsça"
+
+msgid "انگلیسی"
+msgstr "ingilizce"
+
+msgid "ترکی"
+msgstr "türkçe"
+
+msgid "بازگشت به لیست محصولات"
+msgstr "ürünlere dön"
+
+
 msgid "مقصد نهایی شما برای خرید مکمل‌های باکیفیت!"
 msgstr "Kaliteli Takviyeleri Satın Alabileceğiniz Nihai Nokta!"
 
