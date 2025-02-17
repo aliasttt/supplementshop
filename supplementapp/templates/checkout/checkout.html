@@ -97,16 +97,16 @@
             <ul class="list-unstyled">
                 <li class="d-flex justify-content-between">
                     <span>{% trans "جمع مبلغ" %}</span>
-                    <span id="total-amount">{{ total_price }} تومان</span>
+                    <span id="total-amount">{{ total_price }} {% trans "تومان" %} </span>
                 </li>
                 <li class="d-flex justify-content-between">
                     <span>{% trans "هزینه ارسال" %}</span>
-                    <span>20,000 تومان</span>
+                    <span>20,000 {% trans "تومان" %}</span>
                 </li>
                 <hr>
                 <li class="d-flex justify-content-between">
                     <span>{% trans "مجموع کل" %}</span>
-                    <span id="final-amount">{{ total_price|add:20000 }} تومان</span>
+                    <span id="final-amount">{{ total_price|add:20000 }} {% trans "تومان" %} </span>
                 </li>
             </ul>
             <div class="form-check">

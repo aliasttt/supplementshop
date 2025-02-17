@@ -19,6 +19,14 @@ msgstr "türkçe"
 msgid "بازگشت به لیست محصولات"
 msgstr "ürünlere dön"
 
+msgid "آخرین ورود"
+msgstr "son giriş"
+
+
+
+msgid "ویرایش اطلاعات"
+msgstr "hısabı düzenle"
+
 
 msgid "مقصد نهایی شما برای خرید مکمل‌های باکیفیت!"
 msgstr "Kaliteli Takviyeleri Satın Alabileceğiniz Nihai Nokta!"

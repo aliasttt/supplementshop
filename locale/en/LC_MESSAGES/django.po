@@ -349,6 +349,12 @@ msgid "بازگشت به لیست محصولات"
 msgstr "return to the products"
 
 
+msgid "ویرایش اطلاعات"
+msgstr "edit account"
+
+msgid "آخرین ورود"
+msgstr "last login"
+
 msgid "ثبت‌نام حساب کاربری"
 msgstr "sign up your account"
 
