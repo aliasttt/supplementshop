@@ -283,6 +283,10 @@ msgstr "View Profile"
 msgid "خروج"
 msgstr "Logout"
 
+msgid "خروج از حساب"
+msgstr "logout account"
+
+
 msgid "تغییر رمز عبور موفق"
 msgstr "Password Change Successful"
 

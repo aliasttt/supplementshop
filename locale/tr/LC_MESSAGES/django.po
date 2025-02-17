@@ -23,6 +23,10 @@ msgstr "sepede ekle"
 msgid "تومان"
 msgstr "toman"
 
+
+msgid "خروج از حساب"
+msgstr "hısaptan Çıkış"
+
 msgid "تمام دسته‌ها"
 msgstr "kategori"
 
