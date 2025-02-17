@@ -16,6 +16,23 @@ msgstr "ingilizce"
 msgid "ترکی"
 msgstr "türkçe"
 
+
+msgid "اضافه به سبد خرید"
+msgstr "sepede ekle"
+
+msgid "تومان"
+msgstr "toman"
+
+msgid "تمام دسته‌ها"
+msgstr "kategori"
+
+msgid "جستجو..."
+msgstr "ara..."
+
+msgid "اعمال فیلتر"
+msgstr "filtrele"
+
+
 msgid "بازگشت به لیست محصولات"
 msgstr "ürünlere dön"
 
