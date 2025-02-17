@@ -198,8 +198,78 @@
       <a href="{% url 'product' %}?category=whey" class="btn btn-secondary mt-3 d-block text-center">{% trans "مشاهده‌ی تمامی محصولات پروتئین وی" %}</a>
     </div>
 
-    <!-- سایر ردیف‌های محصولات (گینرها، کازعین، ایزوله) به همان صورت قبلی -->
-    <!-- ... -->
+    <!-- ردیف 2: گینرها -->
+    <div class="row mb-5" data-aos="fade-right">
+      <h3 class="mb-3 text-end">{% trans "گینرها" %}</h3>
+      <div class="position-relative">
+        <div id="mass-carousel" class="row g-4 d-flex flex-nowrap carousel-container">
+          {% for product in mass_gainers %}
+          <div class="col-6 col-md-4 flex-shrink-0">
+            <div class="card p-4" data-aos="zoom-in-up">
+              <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+              <div class="card-body text-end">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text text-success">{{ product.price }} {% trans "تومان" %}</p>
+                <a href="{% url 'product_detail' pk=product.id %}" class="btn btn-custom">{% trans "خرید" %}</a>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <button class="btn btn-light carousel-nav-btn position-absolute top-50 start-0 translate-middle-y" onclick="scrollCarousel('mass-carousel', -1)">&laquo;</button>
+        <button class="btn btn-light carousel-nav-btn position-absolute top-50 end-0 translate-middle-y" onclick="scrollCarousel('mass-carousel', 1)">&raquo;</button>
+      </div>
+      <a href="{% url 'product' %}?category=mass_gainer" class="btn btn-secondary mt-3 d-block text-center">{% trans "مشاهده‌ی تمامی محصولات گینر" %}</a>
+    </div>
+
+    <!-- ردیف 3: کازعین -->
+    <div class="row mb-5" data-aos="fade-left">
+      <h3 class="mb-3 text-end">{% trans "کازعین" %}</h3>
+      <div class="position-relative">
+        <div id="casein-carousel" class="row g-4 d-flex flex-nowrap carousel-container">
+          {% for product in casein %}
+          <div class="col-6 col-md-4 flex-shrink-0">
+            <div class="card p-4" data-aos="zoom-in">
+              <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+              <div class="card-body text-end">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text text-success">{{ product.price }} {% trans "تومان" %}</p>
+                <a href="{% url 'product_detail' pk=product.id %}" class="btn btn-custom">{% trans "خرید" %}</a>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <button class="btn btn-light carousel-nav-btn position-absolute top-50 start-0 translate-middle-y" onclick="scrollCarousel('casein-carousel', -1)">&laquo;</button>
+        <button class="btn btn-light carousel-nav-btn position-absolute top-50 end-0 translate-middle-y" onclick="scrollCarousel('casein-carousel', 1)">&raquo;</button>
+      </div>
+      <a href="{% url 'product' %}?category=casein" class="btn btn-secondary mt-3 d-block text-center">{% trans "مشاهده‌ی تمامی محصولات کازعین" %}</a>
+    </div>
+
+    <!-- ردیف 4: ایزوله -->
+    <div class="row mb-5" data-aos="fade-left">
+      <h3 class="mb-3 text-end">{% trans "ایزوله" %}</h3>
+      <div class="position-relative">
+        <div id="isolate-carousel" class="row g-4 d-flex flex-nowrap carousel-container">
+          {% for product in isolate %}
+          <div class="col-6 col-md-4 flex-shrink-0">
+            <div class="card p-4" data-aos="zoom-in">
+              <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+              <div class="card-body text-end">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text text-success">{{ product.price }} {% trans "تومان" %}</p>
+                <a href="{% url 'product_detail' pk=product.id %}" class="btn btn-custom">{% trans "خرید" %}</a>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <button class="btn btn-light carousel-nav-btn position-absolute top-50 start-0 translate-middle-y" onclick="scrollCarousel('isolate-carousel', -1)">&laquo;</button>
+        <button class="btn btn-light carousel-nav-btn position-absolute top-50 end-0 translate-middle-y" onclick="scrollCarousel('isolate-carousel', 1)">&raquo;</button>
+      </div>
+      <a href="{% url 'product' %}?category=isolate" class="btn btn-secondary mt-3 d-block text-center">{% trans "مشاهده‌ی تمامی محصولات ایزوله" %}</a>
+    </div>
+
   </div>
 </section>
 
