@@ -283,6 +283,9 @@ msgstr "View Profile"
 msgid "خروج"
 msgstr "Logout"
 
+msgid "پروفایل کاربری"
+msgstr "profile"
+
 msgid "خروج از حساب"
 msgstr "logout account"
 

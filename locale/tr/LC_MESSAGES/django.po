@@ -17,6 +17,9 @@ msgid "ترکی"
 msgstr "türkçe"
 
 
+msgid "پروفایل کاربری"
+msgstr "hısap"
+
 msgid "اضافه به سبد خرید"
 msgstr "sepede ekle"
 
