@@ -4,10 +4,21 @@
 
 {% block head %}
 <style>
-    body {
-        background-color: gray;
+    /* استایل ویدیو پس‌زمینه */
+    #bg-video {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        z-index: -1;
     }
-
+    body {
+        background-color: black;
+        font-family: 'Vazir', sans-serif;
+    }
     @keyframes fadeIn {
         from {
             opacity: 0;
@@ -18,11 +29,9 @@
             transform: translateY(0);
         }
     }
-
     .fade-in {
         animation: fadeIn 1s ease-out forwards;
     }
-
     .card {
         margin-top: 50px;
         margin-bottom: 50px;
@@ -31,6 +40,11 @@
 {% endblock head %}
 
 {% block content %}
+<!-- ویدیو پس‌زمینه از پوشه مدیا -->
+<video autoplay muted loop id="bg-video">
+    <source src="/media/products/images/59.mp4" type="video/mp4">
+    {% trans "مرورگر شما از ویدیو پشتیبانی نمی‌کند." %}
+</video>
 
 {% if messages %}
     <div class="alert alert-danger">

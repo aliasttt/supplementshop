@@ -4,14 +4,28 @@
 
 {% block head %}
 <style>
+    /* استایل ویدیو پس‌زمینه: استفاده از object-fit: cover باعث می‌شود ویدیو کل صفحه رو پوشش بده */
+    #bg-video {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover; 
+        z-index: -1;
+    }
+    
     body {
-        background-color: gray;
+        background-color:  white;
+        font-family: 'Vazir', sans-serif;
     }
     .card {
         margin-top: 50px;
         opacity: 0; /* ابتدا مخفی */
         transform: translateY(-20px); /* حرکت به بالا */
-        transition: opacity 1s ease-out, transform 1s ease-out; /* انیمیشن */
+        transition: opacity 1s ease-out, transform 1s ease-out;
+        background: rgba(255, 255, 255, 0.1) !important;
     }
     .card.show {
         opacity: 1;
@@ -24,6 +38,11 @@
 {% endblock head %}
 
 {% block content %}
+<!-- ویدیو پس‌زمینه از پوشه مدیا -->
+<video autoplay muted loop id="bg-video">
+    <source src="/media/products/images/57.mp4" type="video/mp4">
+    {% trans "مرورگر شما از ویدیو پشتیبانی نمی‌کند." %}
+</video>
 
 <div class="container d-flex justify-content-center align-items-center mt-5 mb-5" style="min-height: 80vh;">
     <div class="card bg-dark text-white p-4 shadow-lg" id="register-card" style="width: 100%; max-width: 400px;">
@@ -51,7 +70,7 @@
                 <div class="input-group">
                     <input type="password" class="form-control bg-secondary text-white border-0" id="password" name="password" required placeholder="{% trans 'رمز عبور خود را وارد کنید' %}">
                     <button type="button" class="btn btn-outline-secondary m-1" id="togglePassword" style="border-radius: 0; height: 100%; padding: 0 10px;">
-                        <i class="bi bi-eye"></i> <!-- آیکون چشم -->
+                        <i class="bi bi-eye"></i>
                     </button>
                 </div>
             </div>
@@ -70,8 +89,6 @@
         var passwordField = document.getElementById('password');
         var type = passwordField.type === 'password' ? 'text' : 'password';
         passwordField.type = type;
-
-        // تغییر آیکون چشم
         var icon = this.querySelector('i');
         icon.classList.toggle('bi-eye');
         icon.classList.toggle('bi-eye-slash');
@@ -82,5 +99,4 @@
         document.getElementById("register-card").classList.add("show");
     });
 </script>
-
 {% endblock content %}

@@ -3,17 +3,17 @@
 {% load i18n %}
 {% block head %}
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 <style>
     body {
         font-family: 'Vazir', sans-serif;
-        background: linear-gradient(to right, #6a11cb, #2575fc);
+        background: url("/media/products/images/56.jpg") no-repeat center center fixed;
+        background-size: cover;
         color: #fff;
         overflow-x: hidden;
     }
 
     .contact-form {
-        background: #fff;
+        background: rgba(255, 255, 255, 0.5); /* کمی شفاف برای خوانایی بهتر */
         border-radius: 10px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         padding: 30px;
@@ -58,8 +58,12 @@
     .social-icons i {
         font-size: 1.5rem;
         margin: 0 10px;
-        color: #fff;
         transition: color 0.3s ease;
+    }
+
+    /* تنظیم رنگ واتساپ به رنگ رسمی */
+    .whatsapp-icon {
+        color: #25D366 !important;
     }
 
     .social-icons i:hover {
@@ -84,6 +88,10 @@
     .alert-danger {
         background-color: #f44336;
         color: white;
+    }
+
+    .form-label {
+        color: #6a11cb;
     }
 </style>
 {% endblock head %}
@@ -138,8 +146,12 @@
                 </form>
 
                 <div class="text-center mt-4 social-icons">
-                    <a href="https://t.me/yourtelegram" target="_blank"><i class="fab fa-telegram"></i></a>
-                    <a href="https://www.instagram.com/yourinstagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/yourwhatsapp" target="_blank">
+                        <i class="fab fa-whatsapp whatsapp-icon"></i>
+                    </a>
+                    <a style="color: #6a11cb; !important;" href="https://www.instagram.com/yourinstagram" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
                 </div>
             </div>
         </div>
