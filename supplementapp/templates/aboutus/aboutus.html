@@ -10,93 +10,95 @@
     body {
         margin: 0;
         font-family: Arial, sans-serif;
-        background: linear-gradient(120deg, #1e1e1e, #2a2a2a);
+        background: url("/media/products/images/55.jpg") no-repeat center center fixed;
+        background-size: cover;
         color: #fff;
         overflow-x: hidden;
     }
 
-    .hero, .section {
+    .container-about {
+        background: rgba(0, 0, 0, 0.6);
         padding: 2rem;
-        background: rgba(255, 255, 255, 0.1);
         border-radius: 15px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         margin: 2rem auto;
-        max-width: 900px;
-        text-align: center;
-        animation: fadeIn 1.5s ease-in-out;
+        max-width: 1200px;
     }
 
+    .hero {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: #e6dbff;
+    }
+    .hero p {
+        font-size: 1.5rem;
+        color: #f3ecff;
+        line-height: 1.6;
+    }
+
+    .section {
+        margin-bottom: 2rem;
+        padding: 1.5rem;
+        background: rgba(60, 38, 202, 0.2);
+        border-radius: 10px;
+    }
+    .section h2 {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+        color: #e6dbff;
+    }
+    .section p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        color: #f3ecff;
         margin-bottom: 1rem;
     }
 
-    .hero p {
-        font-size: 1.2rem;
-    }
-
-    .section h2 {
-        font-size: 2rem;
-    }
-
-    .section p {
-        font-size: 1.1rem;
-        line-height: 1.8;
-    }
-
-    .section img {
-        display: block;
-        margin: 1.5rem auto;
-        width: 100%;
-        max-width: 600px;
-        border-radius: 15px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    }
-
     @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(-20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in {
+        animation: fadeIn 1.5s ease-in-out;
     }
 
     @media (max-width: 768px) {
-        .hero, .section {
-            padding: 1.5rem;
-        }
-
         .hero h1 {
-            font-size: 2rem;
+            font-size: 2.2rem;
         }
-
+        .hero p {
+            font-size: 1.2rem;
+        }
         .section h2 {
             font-size: 1.8rem;
         }
-
         .section p {
             font-size: 1rem;
         }
     }
 </style>
 
-<div class="hero">
-    <h1>{% trans 'درباره ما' %}</h1>
-    <p>{% trans 'فروشگاه ساپلمنت شاپ، ارائه‌دهنده بهترین و باکیفیت‌ترین مکمل‌های ورزشی و تغذیه‌ای. هدف ما کمک به شما برای دستیابی به اهداف سلامتی و تناسب اندام است.' %}</p>
-</div>
+<div class="container-about fade-in">
+    <div class="hero">
+        <h1>{% trans 'درباره ما' %}</h1>
+        <p>{% trans 'فروشگاه ساپلمنت شاپ، ارائه‌دهنده بهترین و باکیفیت‌ترین مکمل‌های ورزشی و تغذیه‌ای است. هدف ما کمک به شما برای دستیابی به اهداف سلامتی و تناسب اندام از طریق محصولات اصیل و مشاوره تخصصی می‌باشد.' %}</p>
+    </div>
 
-<div class="section">
-    <h2>{% trans 'چرا ما را انتخاب کنید؟' %}</h2>
-    <p>{% trans 'ما به کیفیت محصولات خود متعهد هستیم و تمامی مکمل‌ها با ضمانت اصالت ارائه می‌شوند. تیم ما متشکل از متخصصان تغذیه و ورزش است که همواره آماده پاسخگویی به سوالات شما هستند.' %}</p>
-    <img src="{% static 'img/8.jpg' %}" alt="{% trans 'کیفیت بالا' %}">
-</div>
+    <div class="section">
+        <h2>{% trans 'چرا ما را انتخاب کنید؟' %}</h2>
+        <p>{% trans 'ما به کیفیت محصولات خود متعهد هستیم. تمامی مکمل‌ها بر اساس استانداردهای بین‌المللی تولید و دارای گواهی‌های معتبر هستند.' %}</p>
+        <p>{% trans 'تیم متخصصان ما، با دانش فراوان در زمینه تغذیه و ورزش، به شما در انتخاب محصولات مناسب کمک کرده و همیشه آماده پاسخگویی به سوالات شما می‌باشد.' %}</p>
+        <p>{% trans 'انتخاب فروشگاه ما یعنی اعتماد به اصول صداقت، کیفیت و خدمات برتر که تجربه خریدی امن و رضایت‌بخش را برای شما به ارمغان می‌آورد.' %}</p>
+    </div>
 
-<div class="section">
-    <h2>{% trans 'خدمات ما' %}</h2>
-    <p>{% trans 'ارائه مشاوره تخصصی، ارسال سریع به سراسر کشور، و تخفیفات ویژه برای مشتریان وفادار از جمله خدمات ما هستند.' %}</p>
-    <img src="{% static 'img/9.jpg' %}" alt="{% trans 'خدمات ویژه' %}">
+    <div class="section">
+        <h2>{% trans 'خدمات ما' %}</h2>
+        <p>{% trans 'خدمات ما شامل مشاوره تخصصی در زمینه انتخاب مکمل‌ها، ارسال سریع به سراسر کشور و ارائه تخفیفات ویژه برای مشتریان وفادار می‌باشد.' %}</p>
+        <p>{% trans 'ما از سیستم‌های پیشرفته حمل و نقل استفاده می‌کنیم تا محصولات شما در کوتاه‌ترین زمان ممکن و با بالاترین ایمنی به دستتان برسد.' %}</p>
+        <p>{% trans 'پشتیبانی 24 ساعته تیم ما همواره آماده ارائه راهنمایی و رفع مشکلات احتمالی شماست تا تجربه خریدی لذت‌بخش و بی‌دغدغه را به شما ارائه دهد.' %}</p>
+    </div>
 </div>
 {% endblock %}
