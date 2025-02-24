@@ -15,9 +15,39 @@ from django.template.loader import render_to_string
 from django.http import JsonResponse 
 from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
+import uuid
+from google.cloud import dialogflow_v2 as dialogflow
 
+import json
+# برای چت بات این 3 تا اخری باید ایمپورت بشه
 
+# مقداردهی اولیه به کلاینت Dialogflow
+DIALOGFLOW_PROJECT_ID = 'supplementshop@supplement-shop-451721.iam.gserviceaccount.com'  # آیدی پروژه Dialogflow خود را وارد کنید
+SESSION_CLIENT = dialogflow.SessionsClient()
 
+@csrf_exempt  # در صورت نیاز به غیرفعال کردن CSRF برای تست، در محیط تولید توصیه می‌شود روش امن‌تری به کار ببرید.
+def detect_intent_text(request):
+    if request.method == 'POST':
+        req_data = json.loads(request.body)
+        text_input = req_data.get('text')
+        session_id = req_data.get('sessionId', str(uuid.uuid4()))
+        
+        session = SESSION_CLIENT.session_path(DIALOGFLOW_PROJECT_ID, session_id)
+        text_input_obj = dialogflow.types.TextInput(text=text_input, language_code='fa')
+        query_input = dialogflow.types.QueryInput(text=text_input_obj)
+        
+        try:
+            response = SESSION_CLIENT.detect_intent(session=session, query_input=query_input)
+            # استخراج پاسخ نهایی از Dialogflow
+            fulfillment_text = response.query_result.fulfillment_text
+            return JsonResponse({
+                'fulfillmentText': fulfillment_text,
+                'intent': response.query_result.intent.display_name,
+            })
+        except Exception as e:
+            return JsonResponse({'error': str(e)}, status=500)
+    else:
+        return JsonResponse({'error': 'Invalid request method'}, status=400)
 
 
 def home(request):

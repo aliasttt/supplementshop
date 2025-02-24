@@ -31,6 +31,7 @@ urlpatterns = [
     path('payment_success', views.Payment_success, name='payment_success'),
     path('orders/', orders, name='orders'),
     path('profile/', profile, name='profile'),
+    path('chatbot/', detect_intent_text, name='chatbot'),
     path('i18n/', include('django.conf.urls.i18n')),  # اضافه کردن مسیر تغییر زبان
     path(
         'password-reset/',

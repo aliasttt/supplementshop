@@ -10,6 +10,17 @@ load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# مسیر به دایرکتوری اصلی پروژه
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+# مقداردهی درست متغیر محیطی برای فایل JSON
+GOOGLE_APPLICATION_CREDENTIALS = os.getenv(
+    "DIALOGFLOW_CREDENTIALS_PATH", 
+    os.path.join(BASE_DIR, "credentials", "supplement-shop.json")
+)
+
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = GOOGLE_APPLICATION_CREDENTIALS
+
 
 AUTH_USER_MODEL = 'supplementapp.RegisterModel'
 
@@ -96,17 +107,21 @@ WSGI_APPLICATION = 'supproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-# DATABASES = {
-#        'default': {
-#            'ENGINE': 'django.db.backends.sqlite3',
-#            'NAME': BASE_DIR / 'db.sqlite3',
-#        }
-#    }
+if DEBUG :
 
-DATABASES ={
+    DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': BASE_DIR / 'db.sqlite3',
+            }
+        }
 
-       "default" :dj_database_url.config(default = os.environ.get("DATABASE_URL"))
-   }
+else:
+
+    DATABASES ={
+
+            "default" :dj_database_url.config(default = os.environ.get("DATABASE_URL"))
+        }
 
 
 # Password validation
