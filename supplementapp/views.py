@@ -17,6 +17,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
 import uuid
 from google.cloud import dialogflow_v2 as dialogflow
+from django.contrib.auth.hashers import make_password
 
 import json
 # برای چت بات این 3 تا اخری باید ایمپورت بشه
