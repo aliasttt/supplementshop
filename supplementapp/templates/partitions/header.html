@@ -6,47 +6,33 @@
     <title>SUPPLEMENT SHOP</title>
     <!-- لینک FontAwesome جهت نمایش آیکون‌ها -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <!-- لینک CSS بوت‌استرپ -->
+    <!-- لینک CSS بوت‌استرپ (در صورت استفاده) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    
+    <!-- اسکریپت Dialogflow برای چت‌بات -->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
     
     <!-- استایل‌های اختصاصی -->
     <style>
       body { overflow-x: hidden; }
       @media (max-width: 991.98px) { .ms-3 { margin-left: 0 !important; } }
-      
-      /* استایل دکمه نمایش چت */
-      #chatbot-toggle {
+
+      /* استایل‌های ویجت چت‌بات */
+      #chatbot-container {
           position: fixed;
           bottom: 20px;
           left: 20px;
-          z-index: 1001;
-          background-color: #007bff;
-          color: #fff;
-          border: none;
-          border-radius: 50%;
-          width: 50px;
-          height: 50px;
-          cursor: pointer;
-          font-size: 16px;
-      }
-
-      /* استایل کانتینر چت‌بات */
-      #chatbot-widget {
-          position: fixed;
-          bottom: 80px;
-          left: 10px;
-          z-index: 1000;
-          width: 35vw;  /* تنظیم عرض چت‌بات برای گوشی */
+          width: 300px;
           max-width: 90%;
-          height: 430px;
+          height: 400px;
           background-color: #fff;
           border: 1px solid #ccc;
           border-radius: 10px;
           box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-          display: none; /* به صورت پیش‌فرض مخفی است */
+          display: flex;
+          flex-direction: column;
+          z-index: 1000;
       }
-      
-      /* استایل هدر چت‌بات */
       #chatbot-header {
           background-color: #007bff;
           color: #fff;
@@ -54,30 +40,44 @@
           border-top-left-radius: 10px;
           border-top-right-radius: 10px;
           font-size: 16px;
+          text-align: center;
+      }
+      #chatbot-messages {
+          flex: 1;
+          padding: 10px;
+          overflow-y: auto;
+          background-color: #f9f9f9;
+      }
+      #chatbot-input-container {
           display: flex;
-          justify-content: space-between;
-          align-items: center;
+          border-top: 1px solid #ccc;
       }
-
-      /* دکمه بستن چت‌بات */
-      #chatbot-close {
-          background: none;
+      #chatbot-input {
+          flex: 1;
+          padding: 10px;
           border: none;
-          color: #fff;
-          font-size: 16px;
-          cursor: pointer;
+          outline: none;
+          border-bottom-left-radius: 10px;
       }
-
+      #chatbot-send {
+          background-color: #007bff;
+          color: #fff;
+          border: none;
+          padding: 10px 15px;
+          cursor: pointer;
+          border-bottom-right-radius: 10px;
+      }
+      /* استایل‌های پیام‌های کاربر و بات */
+      .user-message { color: blue; margin-bottom: 8px; }
+      .bot-message { color: green; margin-bottom: 8px; }
     </style>
-    
-    <!-- بارگذاری اسکریپت Dialogflow Messenger -->
-    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
 </head>
 <body>
     <!-- هدر سایت -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
+                <!-- لوگو/برند -->
                 <a class="navbar-brand" href="{% url 'home' %}">SUPPLEMENT SHOP</a>
                 
                 <!-- آیکون سبد خرید برای موبایل -->
@@ -158,40 +158,16 @@
     <div style="margin-top: 100px;">
         <!-- سایر محتویات صفحه -->
     </div>
-    
-    <!-- دکمه نمایش چت‌بات -->
-    <button id="chatbot-toggle" onclick="toggleChatbot()">چت</button>
-    
-    <!-- ویجت چت‌بات -->
-    <div id="chatbot-widget">
-        <div id="chatbot-header">
-            چت‌بات
-            <button id="chatbot-close" onclick="toggleChatbot()">X</button>
-        </div>
-        <df-messenger
-          intent="WELCOME"
-          chat-title="NewAgent"
-          agent-id="6bcba21f-a311-49ec-bf67-7a0217b49ec9"
-          language-code="en"
-        ></df-messenger>
-    </div>
-    
-    <!-- جاوا اسکریپت برای کنترل نمایش/پنهان کردن چت‌بات -->
-    <script>
-      function toggleChatbot() {
-          var widget = document.getElementById('chatbot-widget');
-          var toggleButton = document.getElementById('chatbot-toggle');
-          if (widget.style.display === "none" || widget.style.display === "") {
-              widget.style.display = "block";
-              toggleButton.style.display = "none";
-          } else {
-              widget.style.display = "none";
-              toggleButton.style.display = "block";
-          }
-      }
-    </script>
-    
-    <!-- اسکریپت‌های بوت‌استرپ -->
+
+    <!-- اضافه کردن چت‌بات -->
+    <df-messenger
+        intent="WELCOME"
+        chat-title="NewAgent"
+        agent-id="6bcba21f-a311-49ec-bf67-7a0217b49ec9"
+        language-code="fa"
+    ></df-messenger>
+
+    <!-- اسکریپت‌های مورد نیاز برای بوت‌استرپ -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
