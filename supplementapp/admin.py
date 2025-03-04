@@ -24,5 +24,8 @@ class RegisterAdmin(admin.ModelAdmin):
 
 
     
-
+@admin.register(Message)
+class MessageAdmin(admin.ModelAdmin):
+    list_display = ('name', 'message', 'created_at')  # نمایش پیام‌ها در پنل ادمین
+    ordering = ('-created_at',)  # مرتب‌سازی بر اساس جدیدترین پیام‌ها
         

@@ -45,11 +45,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'channels',#برای استفاده از چتروم آنلاین
     'supplementapp',
     'rest_framework',
     'corsheaders',
     # برای این که فرانت‌اند بتواند به ای پی ای بک اند دسترسی داشته باشد با دوتا دامنه متفاوت
 ]
+
+ASGI_APPLICATION = 'supproject.asgi.application'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -71,7 +75,15 @@ MIDDLEWARE = [
 #     'django.contrib.auth.backends.ModelBackend',  
 # ]
 
-
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+    },
+}
+# یک سیستم پیامرسانی در جنگو
 
 
 CORS_ALLOW_ALL_ORIGINS = True

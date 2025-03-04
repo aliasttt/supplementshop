@@ -102,3 +102,12 @@ class BasketItem(models.Model):
         return f"{self.quantity} عدد از {self.product.name} در سبد {self.basket.user.name}"
 
     
+
+
+class Message(models.Model):
+    name = models.CharField(max_length=100, default="مشتری")  # نام فرستنده (مثلاً مشتری)
+    message = models.TextField()  # متن پیام
+    created_at = models.DateTimeField(auto_now_add=True)  # زمان ارسال پیام
+
+    def __str__(self):
+        return f"{self.name}: {self.message[:30]}"
